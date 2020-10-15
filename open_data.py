@@ -1,16 +1,17 @@
 # Authors: Mélissa Mérat, Gaetan Pelerin, Samuel Rigaud
 # Date: 13/10/2020
+# Original file to download: https://www.data.gouv.fr/fr/datasets/r/3004168d-bec4-44d9-a781-ef16f41856a2
 
 # TODO
-# Use folonium stickers
-# Heat map €
-# Local mean €
+# Local mean with Department sqaure €
 # panda mean or attribute search
 
 import csv
 import json
 import pickle
 from typing import Iterable
+import pandas as pd
+import os
 
 import folium
 import requests
@@ -18,8 +19,18 @@ from folium import plugins
 
 
 addresses_cache = {}
-addresses_cache_file = "addresses_cache_file.txt"
 addresses_base_url = "https://api-adresse.data.gouv.fr/search/?q="
+
+base_directory = os.path.dirname(os.path.abspath(__file__))
+if not os.path.exists(base_directory):
+    os.makedirs(base_directory)
+data_directory = os.path.join(base_directory, "data")
+if not os.path.exists(data_directory):
+    os.makedirs(data_directory)
+addresses_cache_file = os.path.join(data_directory, "addresses_cache_file.txt")
+map_directory = os.path.join(base_directory, "maps")
+if not os.path.exists(map_directory):
+    os.makedirs(map_directory)
 
 
 def load_addresses_cache():
@@ -33,23 +44,33 @@ def save_addresses_cache():
         pickle.dump(addresses_cache, f)
 
 
-def get_rows() -> Iterable:
-    """Retrive every row from a CSV file provided by the french
-    government under under 'Libre xx' licence which indexes every
-    house price evaluation for the year 2019
-    """
-    with open("valeursfoncieres-2019.csv", newline="", encoding='utf-8') as csvfile:
-        yield from csv.reader(csvfile, delimiter="|")
+def save_map(folium_map: folium.Map, filename: str):
+    """Save maps in the dedicated folder"""
+    location = os.path.join(map_directory, filename)
+    folium_map.save(location)
 
 
-def get_coordinates(*args) -> tuple:
+def get_coordinates(row: pd.core.series.Series) -> tuple:
     """For given french addresses formatted parameters, we
     call the government API to retrieve the GPS position of the
     location
 
     We are using a pickled file base cache to avoid spamming the API
     """
-    address_like = " ".join(args).strip().lower()
+    address_like = (
+        " ".join(
+            (
+                str(row["No voie"]),
+                row["Voie"],
+                str(row["Code postal"]),
+                row["Commune"],
+                str(row["Code departement"]),
+                str(row["Code commune"]),
+            )
+        )
+        .strip()
+        .lower()
+    )
 
     if not addresses_cache.get(address_like):
         response = requests.get(addresses_base_url + address_like)
@@ -77,13 +98,13 @@ def create_distribution_heatmap(name: str, lats: list, lons: list):
     tileset = url_base + service
 
     heatmap_map = folium.Map(
-        location=[50, 10],
+        location=[45, 8],
         zoom_start=2,
         control_scale=True,
         tiles=tileset,
         attr="USGS style",
     )
-    data = [(lat, lon) for lat, lon in zip(lats, lons)]
+    data = [lon_lat for lon_lat in zip(lons, lats)]
 
     hm = plugins.HeatMap(data)
     heatmap_map.add_child(hm)
@@ -98,30 +119,29 @@ def create_distribution_heatmap(name: str, lats: list, lons: list):
     )
     heatmap_map.add_child(plugins.MeasureControl())
     heatmap_map.add_child(plugins.MiniMap())
-    heatmap_map.save(name)
+    save_map(heatmap_map, name)
 
 
-def create_markup_map(
-    name: str, lats: list, lons: list, housing_types: tuple, prices: tuple
-):
+def create_markup_map(name: str, rows: tuple):
     """Test function to create nice Leaflet html files"""
-    data = [(lat, lon) for lat, lon in zip(lats, lons)]
-
     map_ = folium.Map(
-        location=[50, 10], zoom_start=2, control_scale=True, tiles="openstreetmap",
+        location=[45, 8],
+        zoom_start=3,
+        control_scale=True,
+        tiles="openstreetmap",
     )
     mcg = folium.plugins.MarkerCluster(control=False)
     map_.add_child(mcg)
 
-    houses = folium.plugins.FeatureGroupSubGroup(mcg, 'houses')
-    appartements = folium.plugins.FeatureGroupSubGroup(mcg, 'appartements')
-    others = folium.plugins.FeatureGroupSubGroup(mcg, 'others')
+    houses = folium.plugins.FeatureGroupSubGroup(mcg, "houses")
+    appartements = folium.plugins.FeatureGroupSubGroup(mcg, "appartements")
+    others = folium.plugins.FeatureGroupSubGroup(mcg, "others")
     map_.add_child(houses)
     map_.add_child(appartements)
     map_.add_child(others)
 
-    for i, d in enumerate(data):
-        housing_type = housing_types[i]
+    for _, row in rows.iterrows():
+        housing_type = row["Type local"]
         if housing_type == "Maison":
             color = "darkgreen"
             icon = "home"
@@ -136,15 +156,11 @@ def create_markup_map(
             icon = "info-sign"
             context = others
 
-        formatted_price = (
-            f"{int(float(prices[i].replace(',', '.'))):,}".replace(",", "⠀")
-            if prices[i]
-            else "Undefined"
-        )
+        price = int(row["Valeur fonciere"]) if row["Valeur fonciere"] else "Undefined"
         folium.Marker(
-            [d[0], d[1]],
-            popup=f"{housing_type} <b>{formatted_price}€</b>",
-            tooltip=housing_types[i],
+            (row["lat"], row["lon"]),
+            popup=f"{housing_type} <b>{price}€</b>",
+            tooltip=housing_type,
             icon=folium.Icon(color=color, icon=icon),
         ).add_to(context)
 
@@ -159,87 +175,57 @@ def create_markup_map(
     map_.add_child(folium.LayerControl(collapsed=False))
     map_.add_child(plugins.MeasureControl())
     map_.add_child(plugins.MiniMap())
-    map_.save(name)
+    save_map(map_, name)
+
+
+def create_area_map(lats: list, lons: list):
+    for scale in ["departement", "region"]:
+        france_data = pd.read_csv(
+            os.path.join(data_directory, f"local_avg_{scale}.csv")
+        )
+        france_geo = f"https://france-geojson.gregoiredavid.fr/repo/{scale}s.geojson"
+
+        m = folium.Map(location=[48, -102], zoom_start=3)
+        folium.Choropleth(
+            geo_data=france_geo,
+            name=f"{scale.capitalize()} mapping",
+            data=france_data,
+            columns=["id", "€(avg)"],
+            key_on="feature.properties.code",
+            fill_color="YlGn",
+            fill_opacity=0.7,
+            line_opacity=0.2,
+            legend_name="Housing value (avg €)",
+        ).add_to(m)
+
+        folium.LayerControl().add_to(m)
+        save_map(m, f"area_map_{scale}.html")
 
 
 if __name__ == "__main__":
-    lats = []
-    lons = []
-    housing_types = []
-    prices = []
     load_addresses_cache()
-    rows = get_rows()
-    # Avoiding header row
-    next(rows)
+    rows = pd.read_csv(
+        pd.read_csv(os.path.join(data_directory, "valeursfoncieres-2019.csv")),
+        delimiter="|",
+        encoding="utf-8",
+    )
+    rows = rows.head(1000)
 
-    for row in rows:
-        (
-            code_service_ch,
-            reference_document,
-            articles_cgi_1,
-            articles_cgi_2,
-            articles_cgi_3,
-            articles_cgi_4,
-            articles_cgi_5,
-            no_disposition,
-            date_mutation,
-            nature_mutation,
-            valeur_fonciere,
-            no_voie,
-            b_t_q,
-            type_de_voie,
-            code_voie,
-            voie,
-            code_postal,
-            commune,
-            code_departement,
-            code_commune,
-            prefixe_de_section,
-            section,
-            no_plan,
-            no_volume,
-            premier_lot,
-            surface_carrez_du_1er_lot,
-            second_lot,
-            surface_carrez_du_2eme_lot,
-            troisieme_lot,
-            surface_carrez_du_3eme_lot,
-            quatrieme_lot,
-            surface_carrez_du_4eme_lot,
-            cinquieme_lot,
-            surface_carrez_du_5eme_lot,
-            nombre_de_lots,
-            code_type_local,
-            type_local,
-            identifiant_local,
-            surface_reelle_bati,
-            nombre_pieces_principales,
-            nature_culture,
-            nature_culture_speciale,
-            surface_terrain,
-        ) = row
+    # Cleaning rows
+    rows["Valeur fonciere"] = (
+        rows["Valeur fonciere"].str.replace(",", ".").astype(float)
+    )
 
-        x, y = get_coordinates(
-            no_voie,
-            type_de_voie,
-            voie,
-            code_postal,
-            commune,
-            code_departement,
-            code_commune,
-        )
-        if x and y:
-            lons.append(x)
-            lats.append(y)
-            housing_types.append(type_local)
-            prices.append(valeur_fonciere)
-
-        # break point
-        if len(lats) > 1000:
-            break
+    lons = []
+    lats = []
+    for _, row in rows.iterrows():
+        lon, lat = get_coordinates(row)
+        lons.append(lon)
+        lats.append(lat)
+    rows["lon"] = lons
+    rows["lat"] = lats
 
     create_distribution_heatmap(name="distribution_heatmap.html", lats=lats, lons=lons)
-    create_markup_map(
-        name="test_map1.html", lats=lats, lons=lons, housing_types=housing_types, prices=prices
-    )
+    create_markup_map(name="markup_map.html", rows=rows)
+    create_area_map(lats=lats, lons=lons)
     save_addresses_cache()
