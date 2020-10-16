@@ -8,15 +8,14 @@
 
 import csv
 import json
+import os
 import pickle
 from typing import Iterable
-import pandas as pd
-import os
 
 import folium
+import pandas as pd
 import requests
 from folium import plugins
-
 
 addresses_cache = {}
 addresses_base_url = "https://api-adresse.data.gouv.fr/search/?q="
@@ -34,8 +33,13 @@ if not os.path.exists(map_directory):
 
 
 def load_addresses_cache():
+    if not os.path.exists(addresses_cache_file):
+        with open(addresses_cache_file, "wb") as f:
+            pickle.dump(addresses_cache, f)
+
     with open(addresses_cache_file, "rb") as f:
         addresses_cache.update(pickle.load(f))
+        print(f"Already {len(addresses_cache)} addresses in cache")
         return addresses_cache
 
 
@@ -50,20 +54,14 @@ def save_map(folium_map: folium.Map, filename: str):
     folium_map.save(location)
 
 
-def get_coordinates(row: pd.core.series.Series) -> tuple:
-    """For given french addresses formatted parameters, we
-    call the government API to retrieve the GPS position of the
-    location
-
-    We are using a pickled file base cache to avoid spamming the API
-    """
-    address_like = (
+def get_address_from_row(row: pd.core.series.Series) -> str:
+    return (
         " ".join(
             (
                 str(row["No voie"]),
-                row["Voie"],
+                str(row["Voie"]),
                 str(row["Code postal"]),
-                row["Commune"],
+                str(row["Commune"]),
                 str(row["Code departement"]),
                 str(row["Code commune"]),
             )
@@ -72,8 +70,18 @@ def get_coordinates(row: pd.core.series.Series) -> tuple:
         .lower()
     )
 
-    if not addresses_cache.get(address_like):
-        response = requests.get(addresses_base_url + address_like)
+
+def get_coordinates(row: pd.core.series.Series) -> tuple:
+    """For given french addresses formatted parameters, we
+    call the government API to retrieve the GPS position of the
+    location
+
+    We are using a pickled file base cache to avoid spamming the API
+    """
+    address = get_address_from_row(row)
+
+    if not addresses_cache.get(address):
+        response = requests.get(addresses_base_url + address)
         addresses = json.loads(response.text)
 
         features = addresses["features"]
@@ -84,9 +92,9 @@ def get_coordinates(row: pd.core.series.Series) -> tuple:
             )
         else:
             res = (0, 0)
-        addresses_cache[address_like] = res
+        addresses_cache[address] = res
 
-    return addresses_cache[address_like]
+    return addresses_cache[address]
 
 
 def create_distribution_heatmap(name: str, lats: list, lons: list):
@@ -104,7 +112,7 @@ def create_distribution_heatmap(name: str, lats: list, lons: list):
         tiles=tileset,
         attr="USGS style",
     )
-    data = [lon_lat for lon_lat in zip(lons, lats)]
+    data = [lon_lat for lon_lat in zip(lats, lons)]
 
     hm = plugins.HeatMap(data)
     heatmap_map.add_child(hm)
@@ -122,7 +130,7 @@ def create_distribution_heatmap(name: str, lats: list, lons: list):
     save_map(heatmap_map, name)
 
 
-def create_markup_map(name: str, rows: tuple):
+def create_markup_map(name: str, df):
     """Test function to create nice Leaflet html files"""
     map_ = folium.Map(
         location=[45, 8],
@@ -140,7 +148,7 @@ def create_markup_map(name: str, rows: tuple):
     map_.add_child(appartements)
     map_.add_child(others)
 
-    for _, row in rows.iterrows():
+    for _, row in df.iterrows():
         housing_type = row["Type local"]
         if housing_type == "Maison":
             color = "darkgreen"
@@ -156,13 +164,21 @@ def create_markup_map(name: str, rows: tuple):
             icon = "info-sign"
             context = others
 
-        price = int(row["Valeur fonciere"]) if row["Valeur fonciere"] else "Undefined"
-        folium.Marker(
-            (row["lat"], row["lon"]),
-            popup=f"{housing_type} <b>{price}€</b>",
-            tooltip=housing_type,
-            icon=folium.Icon(color=color, icon=icon),
-        ).add_to(context)
+        price = int(row["Valeur fonciere"])
+        address = get_address_from_row(row)
+        context.add_child(
+            folium.Marker(
+                (row["lat"], row["lon"]),
+                popup=folium.Popup(
+                    f"{housing_type}</br> {address} <b>{price}€</b>",
+                    # Not working properly
+                    max_width="400px",
+                    min_width="200px",
+                ),
+                tooltip=housing_type,
+                icon=folium.Icon(color=color, icon=icon),
+            )
+        )
 
     map_.add_child(
         plugins.Fullscreen(
@@ -204,28 +220,44 @@ def create_area_map(lats: list, lons: list):
 
 if __name__ == "__main__":
     load_addresses_cache()
-    rows = pd.read_csv(
-        pd.read_csv(os.path.join(data_directory, "valeursfoncieres-2019.csv")),
+
+    print("Loading and cleaning CSV file ...")
+    df = pd.read_csv(
+        os.path.join(data_directory, "valeursfoncieres-2019.csv"),
         delimiter="|",
         encoding="utf-8",
     )
-    rows = rows.head(1000)
+    df = df.head(10000)
 
-    # Cleaning rows
-    rows["Valeur fonciere"] = (
-        rows["Valeur fonciere"].str.replace(",", ".").astype(float)
+    # Cleaning df
+    df["Valeur fonciere"] = (
+        df["Valeur fonciere"].str.replace(",", ".").astype(float)
     )
 
+    print("Loading addresses using cache ...")
     lons = []
     lats = []
-    for _, row in rows.iterrows():
+    for _, row in df.iterrows():
+        print(_)
         lon, lat = get_coordinates(row)
         lons.append(lon)
         lats.append(lat)
-    rows["lon"] = lons
-    rows["lat"] = lats
+    df["lon"] = lons
+    df["lat"] = lats
+    # Filter points without positions -> NaN or 0
+    df = df[
+        (pd.notnull(df["lon"]) & df["lon"] != 0)
+        & (pd.notnull(df["lat"]) & df["lat"] != 0)
+        & (df["Valeur fonciere"] > 0)
+    ]
+    import ipdb; ipdb.set_trace()
+    dep_value = df[['Code departement', 'Valeur fonciere', "Type local"]]
+    avg_dep_value_houses = dep_value[dep_value["Type local"] == "Maison"].groupby(['Code departement']).mean().astype(int)
 
-    create_distribution_heatmap(name="distribution_heatmap.html", lats=lats, lons=lons)
-    create_markup_map(name="markup_map.html", rows=rows)
-    create_area_map(lats=lats, lons=lons)
+    print("Creating maps ...")
+    create_distribution_heatmap(
+        name="distribution_heatmap.html", lats=df["lat"], lons=df["lon"]
+    )
+    create_markup_map(name="markup_map.html", df=df)
+    create_area_map(lats=df["lat"], lons=df["lon"])
     save_addresses_cache()
