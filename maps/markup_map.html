@@ -1,0 +1,3107 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_25f6c0a84bbd4e4e8b4168495358283b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css"/>
+    <script src="https://rawcdn.githack.com/ljagis/leaflet-measure/2.1.7/dist/leaflet-measure.js"></script>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/ljagis/leaflet-measure/2.1.7/dist/leaflet-measure.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_25f6c0a84bbd4e4e8b4168495358283b" ></div>
+        
+</body>
+<script>    
+    
+            var map_25f6c0a84bbd4e4e8b4168495358283b = L.map(
+                "map_25f6c0a84bbd4e4e8b4168495358283b",
+                {
+                    center: [48.52, 2.19],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_25f6c0a84bbd4e4e8b4168495358283b);
+
+            
+
+        
+    
+            var tile_layer_1f7954aeea1a402a8b1acaa57c790c72 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_25f6c0a84bbd4e4e8b4168495358283b);
+        
+    
+            var marker_cluster_555a3e73119e4204819038a6b3e644d7 = L.markerClusterGroup(
+                {}
+            );
+            map_25f6c0a84bbd4e4e8b4168495358283b.addLayer(marker_cluster_555a3e73119e4204819038a6b3e644d7);
+        
+    
+            var feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158 = L.featureGroup.subGroup(
+                marker_cluster_555a3e73119e4204819038a6b3e644d7
+            );
+            feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158.addTo(map_25f6c0a84bbd4e4e8b4168495358283b);
+        
+    
+            var marker_c65291d508854902b5aadd1f43e182bd = L.marker(
+                [45.999152, 5.282228],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_b6142ec5a31f48bea6dcf81bfc96eb74 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_c65291d508854902b5aadd1f43e182bd.setIcon(icon_b6142ec5a31f48bea6dcf81bfc96eb74);
+        
+    
+        var popup_22d87524a7c54445b918a5ca03dce709 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_e99618d0b50b4ae1b2b63324ed5fe1c3 = $(`<div id="html_e99618d0b50b4ae1b2b63324ed5fe1c3" style="width: 100.0%; height: 100.0%;">Maison</br> 3.0 des champagnes 1160.0 priay 01 314 <b>209000€</b></div>`)[0];
+            popup_22d87524a7c54445b918a5ca03dce709.setContent(html_e99618d0b50b4ae1b2b63324ed5fe1c3);
+        
+
+        marker_c65291d508854902b5aadd1f43e182bd.bindPopup(popup_22d87524a7c54445b918a5ca03dce709)
+        ;
+
+        
+    
+    
+            marker_c65291d508854902b5aadd1f43e182bd.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f9aff8dfcb1143b6a54ddbaff7c0ea14 = L.marker(
+                [46.291659, 5.300626],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_98484161c9f449f09a8188d14159e0ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_f9aff8dfcb1143b6a54ddbaff7c0ea14.setIcon(icon_98484161c9f449f09a8188d14159e0ae);
+        
+    
+        var popup_e5bb706c21094b5ab9c164301b14c203 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_c1e94ffacade402aacdcea4707a3f887 = $(`<div id="html_c1e94ffacade402aacdcea4707a3f887" style="width: 100.0%; height: 100.0%;">Maison</br> 5.0 le biolay 1370.0 saint-etienne-du-bois 01 350 <b>134900€</b></div>`)[0];
+            popup_e5bb706c21094b5ab9c164301b14c203.setContent(html_c1e94ffacade402aacdcea4707a3f887);
+        
+
+        marker_f9aff8dfcb1143b6a54ddbaff7c0ea14.bindPopup(popup_e5bb706c21094b5ab9c164301b14c203)
+        ;
+
+        
+    
+    
+            marker_f9aff8dfcb1143b6a54ddbaff7c0ea14.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_698161925b3d43c2a7a7a3e2f6b5b541 = L.marker(
+                [46.268304, 5.1751],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_32752a7af85a483d8ea962125302d1f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_698161925b3d43c2a7a7a3e2f6b5b541.setIcon(icon_32752a7af85a483d8ea962125302d1f8);
+        
+    
+        var popup_1027861802f543e8a6268f91e6b99403 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_95f0cb486c5b4554af40508387225e53 = $(`<div id="html_95f0cb486c5b4554af40508387225e53" style="width: 100.0%; height: 100.0%;">Maison</br> 165.0 des libellules 1340.0 attignat 01 24 <b>192000€</b></div>`)[0];
+            popup_1027861802f543e8a6268f91e6b99403.setContent(html_95f0cb486c5b4554af40508387225e53);
+        
+
+        marker_698161925b3d43c2a7a7a3e2f6b5b541.bindPopup(popup_1027861802f543e8a6268f91e6b99403)
+        ;
+
+        
+    
+    
+            marker_698161925b3d43c2a7a7a3e2f6b5b541.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3d54b39d6dcc4a12a3bb7236e7a27194 = L.marker(
+                [46.205323, 5.447707],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_dcfe7531d51143a69bc4a6d9525092d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_3d54b39d6dcc4a12a3bb7236e7a27194.setIcon(icon_dcfe7531d51143a69bc4a6d9525092d2);
+        
+    
+        var popup_b7e3dd00a94043cab118e9f18e7ef14e = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_bd940912ad214b43a667daa5dfd7b232 = $(`<div id="html_bd940912ad214b43a667daa5dfd7b232" style="width: 100.0%; height: 100.0%;">Maison</br> 9.0 du viaduc 1250.0 cize 01 106 <b>45000€</b></div>`)[0];
+            popup_b7e3dd00a94043cab118e9f18e7ef14e.setContent(html_bd940912ad214b43a667daa5dfd7b232);
+        
+
+        marker_3d54b39d6dcc4a12a3bb7236e7a27194.bindPopup(popup_b7e3dd00a94043cab118e9f18e7ef14e)
+        ;
+
+        
+    
+    
+            marker_3d54b39d6dcc4a12a3bb7236e7a27194.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_04809419edf74d729d3f6b218f2b2cca = L.marker(
+                [46.439293, 5.115355],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_fcfd1741717b4bcda84c81b08b820dc7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_04809419edf74d729d3f6b218f2b2cca.setIcon(icon_fcfd1741717b4bcda84c81b08b820dc7);
+        
+    
+        var popup_52eb4d12081e46e29b4d753bf83a1fc9 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_6e095c689938417da005d307079f8f29 = $(`<div id="html_6e095c689938417da005d307079f8f29" style="width: 100.0%; height: 100.0%;">Maison</br> 1724.0 de montleger 1560.0 mantenay-montlin 01 230 <b>116000€</b></div>`)[0];
+            popup_52eb4d12081e46e29b4d753bf83a1fc9.setContent(html_6e095c689938417da005d307079f8f29);
+        
+
+        marker_04809419edf74d729d3f6b218f2b2cca.bindPopup(popup_52eb4d12081e46e29b4d753bf83a1fc9)
+        ;
+
+        
+    
+    
+            marker_04809419edf74d729d3f6b218f2b2cca.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9e80fe4084784822a57cfc79bb866f67 = L.marker(
+                [46.330941, 5.119193],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_6f9c6d7c98764d28bca820b012ad38d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_9e80fe4084784822a57cfc79bb866f67.setIcon(icon_6f9c6d7c98764d28bca820b012ad38d7);
+        
+    
+        var popup_f2c0ee6e8be047c795239d3adef62ba0 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_06c92b93469a4091bcc0ad0b40c5daed = $(`<div id="html_06c92b93469a4091bcc0ad0b40c5daed" style="width: 100.0%; height: 100.0%;">Maison</br> 1250.0 de cuet 1340.0 montrevel-en-bresse 01 266 <b>266000€</b></div>`)[0];
+            popup_f2c0ee6e8be047c795239d3adef62ba0.setContent(html_06c92b93469a4091bcc0ad0b40c5daed);
+        
+
+        marker_9e80fe4084784822a57cfc79bb866f67.bindPopup(popup_f2c0ee6e8be047c795239d3adef62ba0)
+        ;
+
+        
+    
+    
+            marker_9e80fe4084784822a57cfc79bb866f67.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4aaa4c51d34b4e55ab08ba971a67ef29 = L.marker(
+                [46.480036, 5.109369],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_672a4b909ef548e5a3c26c376e8b3ee6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_4aaa4c51d34b4e55ab08ba971a67ef29.setIcon(icon_672a4b909ef548e5a3c26c376e8b3ee6);
+        
+    
+        var popup_f40be1d29451425b817bad671a119aae = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_406cbfbae7534120af499d328baeab8b = $(`<div id="html_406cbfbae7534120af499d328baeab8b" style="width: 100.0%; height: 100.0%;">Maison</br> 181.0 de vernoux 1560.0 courtes 01 128 <b>138100€</b></div>`)[0];
+            popup_f40be1d29451425b817bad671a119aae.setContent(html_406cbfbae7534120af499d328baeab8b);
+        
+
+        marker_4aaa4c51d34b4e55ab08ba971a67ef29.bindPopup(popup_f40be1d29451425b817bad671a119aae)
+        ;
+
+        
+    
+    
+            marker_4aaa4c51d34b4e55ab08ba971a67ef29.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b2a1246b39f4e678b5a5db5a6d0638f = L.marker(
+                [46.18107, 5.135156],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_405233d65ebd4a48bdae20563e01478d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_9b2a1246b39f4e678b5a5db5a6d0638f.setIcon(icon_405233d65ebd4a48bdae20563e01478d);
+        
+    
+        var popup_a9e7e29bcf2e453ea37d194077d16beb = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_933f75e880404e029de900c1b51e29d4 = $(`<div id="html_933f75e880404e029de900c1b51e29d4" style="width: 100.0%; height: 100.0%;">Maison</br> 544.0 de bois brule 1310.0 montracol 01 264 <b>207000€</b></div>`)[0];
+            popup_a9e7e29bcf2e453ea37d194077d16beb.setContent(html_933f75e880404e029de900c1b51e29d4);
+        
+
+        marker_9b2a1246b39f4e678b5a5db5a6d0638f.bindPopup(popup_a9e7e29bcf2e453ea37d194077d16beb)
+        ;
+
+        
+    
+    
+            marker_9b2a1246b39f4e678b5a5db5a6d0638f.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6b751ddc0d384aa0a34fa95ebef0e1f1 = L.marker(
+                [46.163365, 5.228892],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_844ecaea45d84145bb8b719e27530e45 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_6b751ddc0d384aa0a34fa95ebef0e1f1.setIcon(icon_844ecaea45d84145bb8b719e27530e45);
+        
+    
+        var popup_47617234b9604d218eb09fef9dfaa2f2 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_76301d5cd82e4631832b75ddf755107c = $(`<div id="html_76301d5cd82e4631832b75ddf755107c" style="width: 100.0%; height: 100.0%;">Maison</br> 435.0 du pommier 1960.0 peronnas 01 289 <b>140000€</b></div>`)[0];
+            popup_47617234b9604d218eb09fef9dfaa2f2.setContent(html_76301d5cd82e4631832b75ddf755107c);
+        
+
+        marker_6b751ddc0d384aa0a34fa95ebef0e1f1.bindPopup(popup_47617234b9604d218eb09fef9dfaa2f2)
+        ;
+
+        
+    
+    
+            marker_6b751ddc0d384aa0a34fa95ebef0e1f1.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_add47d397e2844d18449e8edf023315d = L.marker(
+                [46.163365, 5.228892],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_a09eadc167ac4841b52666757573775c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_add47d397e2844d18449e8edf023315d.setIcon(icon_a09eadc167ac4841b52666757573775c);
+        
+    
+        var popup_959f79a52dde41c8af54d0c596b962e2 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_8d353994299346d0bee73237248c45b4 = $(`<div id="html_8d353994299346d0bee73237248c45b4" style="width: 100.0%; height: 100.0%;">Maison</br> 437.0 du pommier 1960.0 peronnas 01 289 <b>106000€</b></div>`)[0];
+            popup_959f79a52dde41c8af54d0c596b962e2.setContent(html_8d353994299346d0bee73237248c45b4);
+        
+
+        marker_add47d397e2844d18449e8edf023315d.bindPopup(popup_959f79a52dde41c8af54d0c596b962e2)
+        ;
+
+        
+    
+    
+            marker_add47d397e2844d18449e8edf023315d.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_23207db1cec2403b874a62f1f20895c7 = L.marker(
+                [47.574878, -3.0008],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_9dd7a0653cdb4a5298757d3de22759d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_23207db1cec2403b874a62f1f20895c7.setIcon(icon_9dd7a0653cdb4a5298757d3de22759d6);
+        
+    
+        var popup_9f4c43164c2a444a863f9749cf356f70 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_8da01f03c31e49a786eeec017f87e63e = $(`<div id="html_8da01f03c31e49a786eeec017f87e63e" style="width: 100.0%; height: 100.0%;">Maison</br> 95.0 du martin pecheur 1000.0 saint-denis-les-bourg 01 344 <b>200000€</b></div>`)[0];
+            popup_9f4c43164c2a444a863f9749cf356f70.setContent(html_8da01f03c31e49a786eeec017f87e63e);
+        
+
+        marker_23207db1cec2403b874a62f1f20895c7.bindPopup(popup_9f4c43164c2a444a863f9749cf356f70)
+        ;
+
+        
+    
+    
+            marker_23207db1cec2403b874a62f1f20895c7.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c3a799609f454e4590c01210d6191675 = L.marker(
+                [46.460507, 4.953711],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_1cc04bb14fc84955ba5a8fd8149a176f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_c3a799609f454e4590c01210d6191675.setIcon(icon_1cc04bb14fc84955ba5a8fd8149a176f);
+        
+    
+        var popup_60c87c1c55864626a63b84534ed5d5e9 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_d118a548b88c4edaa3e62874e92c1074 = $(`<div id="html_d118a548b88c4edaa3e62874e92c1074" style="width: 100.0%; height: 100.0%;">Maison</br> 1587.0 de cuisery 1190.0 saint-benigne 01 337 <b>172750€</b></div>`)[0];
+            popup_60c87c1c55864626a63b84534ed5d5e9.setContent(html_d118a548b88c4edaa3e62874e92c1074);
+        
+
+        marker_c3a799609f454e4590c01210d6191675.bindPopup(popup_60c87c1c55864626a63b84534ed5d5e9)
+        ;
+
+        
+    
+    
+            marker_c3a799609f454e4590c01210d6191675.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8a5bae451da441b3b5d9f25e31d16e7e = L.marker(
+                [46.460507, 4.953711],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_488fa26ba07848f0ba0be0054d271f1f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_8a5bae451da441b3b5d9f25e31d16e7e.setIcon(icon_488fa26ba07848f0ba0be0054d271f1f);
+        
+    
+        var popup_eda9c344b8f4425ca451671f0817bd1f = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_9d02cd8cf2314644afd2ce1e88abe8b7 = $(`<div id="html_9d02cd8cf2314644afd2ce1e88abe8b7" style="width: 100.0%; height: 100.0%;">Maison</br> 1587.0 de cuisery 1190.0 saint-benigne 01 337 <b>172750€</b></div>`)[0];
+            popup_eda9c344b8f4425ca451671f0817bd1f.setContent(html_9d02cd8cf2314644afd2ce1e88abe8b7);
+        
+
+        marker_8a5bae451da441b3b5d9f25e31d16e7e.bindPopup(popup_eda9c344b8f4425ca451671f0817bd1f)
+        ;
+
+        
+    
+    
+            marker_8a5bae451da441b3b5d9f25e31d16e7e.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2c813f94b3cf4354a1df6af376bd0cef = L.marker(
+                [46.210813, 5.255418],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_9d3de9f90b8b495bb89c3c73d22082b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_2c813f94b3cf4354a1df6af376bd0cef.setIcon(icon_9d3de9f90b8b495bb89c3c73d22082b0);
+        
+    
+        var popup_4da818e1a67649818276eab744a01c12 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_5035e942432d41498ec08fca2c729e8e = $(`<div id="html_5035e942432d41498ec08fca2c729e8e" style="width: 100.0%; height: 100.0%;">Maison</br> 116.0 des glaneuses 1000.0 bourg-en-bresse 01 53 <b>214500€</b></div>`)[0];
+            popup_4da818e1a67649818276eab744a01c12.setContent(html_5035e942432d41498ec08fca2c729e8e);
+        
+
+        marker_2c813f94b3cf4354a1df6af376bd0cef.bindPopup(popup_4da818e1a67649818276eab744a01c12)
+        ;
+
+        
+    
+    
+            marker_2c813f94b3cf4354a1df6af376bd0cef.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bec1622ab577466a80505bb0432b80ec = L.marker(
+                [46.220062, 4.880924],
+                {}
+            ).addTo(feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158);
+        
+    
+            var icon_d09ad102e8af4f84a5e9259772a9315e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_bec1622ab577466a80505bb0432b80ec.setIcon(icon_d09ad102e8af4f84a5e9259772a9315e);
+        
+    
+        var popup_71620f6b6ac74bb1b5da813cef88cbb5 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_f50c13dd7ab84bdf9af3a6dfbee6a18c = $(`<div id="html_f50c13dd7ab84bdf9af3a6dfbee6a18c" style="width: 100.0%; height: 100.0%;">Maison</br> 37.0 les chambards ouest 1290.0 cruzilles-les-mepillat 01 136 <b>135000€</b></div>`)[0];
+            popup_71620f6b6ac74bb1b5da813cef88cbb5.setContent(html_f50c13dd7ab84bdf9af3a6dfbee6a18c);
+        
+
+        marker_bec1622ab577466a80505bb0432b80ec.bindPopup(popup_71620f6b6ac74bb1b5da813cef88cbb5)
+        ;
+
+        
+    
+    
+            marker_bec1622ab577466a80505bb0432b80ec.bindTooltip(
+                `<div>
+                     Maison
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15 = L.featureGroup.subGroup(
+                marker_cluster_555a3e73119e4204819038a6b3e644d7
+            );
+            feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15.addTo(map_25f6c0a84bbd4e4e8b4168495358283b);
+        
+    
+            var marker_cdb9fbf6440b4540883f0b840652c034 = L.marker(
+                [46.201764, 5.210598],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_44ff2a3952f844d497794a147b380941 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cdb9fbf6440b4540883f0b840652c034.setIcon(icon_44ff2a3952f844d497794a147b380941);
+        
+    
+        var popup_bb0eb91e4da445ec928013739f953683 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_26ece01cb0e34512877cbed625cdebd3 = $(`<div id="html_26ece01cb0e34512877cbed625cdebd3" style="width: 100.0%; height: 100.0%;">Appartement</br> 26.0 de montholon 1000.0 bourg-en-bresse 01 53 <b>37220€</b></div>`)[0];
+            popup_bb0eb91e4da445ec928013739f953683.setContent(html_26ece01cb0e34512877cbed625cdebd3);
+        
+
+        marker_cdb9fbf6440b4540883f0b840652c034.bindPopup(popup_bb0eb91e4da445ec928013739f953683)
+        ;
+
+        
+    
+    
+            marker_cdb9fbf6440b4540883f0b840652c034.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fa4811bb5ca54323b4c16efbca9eb51b = L.marker(
+                [46.200278, 5.220267],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_c36546da283a4bc2a80116dd4686c391 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fa4811bb5ca54323b4c16efbca9eb51b.setIcon(icon_c36546da283a4bc2a80116dd4686c391);
+        
+    
+        var popup_377870d1747040e2b8dcdf332d2b250e = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_f29392ea9846472c8f85219c1ab1a2cf = $(`<div id="html_f29392ea9846472c8f85219c1ab1a2cf" style="width: 100.0%; height: 100.0%;">Appartement</br> 22.0 gen delestraint 1000.0 bourg-en-bresse 01 53 <b>185100€</b></div>`)[0];
+            popup_377870d1747040e2b8dcdf332d2b250e.setContent(html_f29392ea9846472c8f85219c1ab1a2cf);
+        
+
+        marker_fa4811bb5ca54323b4c16efbca9eb51b.bindPopup(popup_377870d1747040e2b8dcdf332d2b250e)
+        ;
+
+        
+    
+    
+            marker_fa4811bb5ca54323b4c16efbca9eb51b.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f991fe38b7ba4a738d496254f1ab2300 = L.marker(
+                [46.197814, 5.222037],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_8a98e0f2db6e40b88bb9973cd878d4c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f991fe38b7ba4a738d496254f1ab2300.setIcon(icon_8a98e0f2db6e40b88bb9973cd878d4c3);
+        
+    
+        var popup_bb114e392f1d42c2b2e15fddb0feefe1 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_a8dcb5262ebd4527ae410832f0fb1b2d = $(`<div id="html_a8dcb5262ebd4527ae410832f0fb1b2d" style="width: 100.0%; height: 100.0%;">Appartement</br> 50.0 doc nodet 1000.0 bourg-en-bresse 01 53 <b>65000€</b></div>`)[0];
+            popup_bb114e392f1d42c2b2e15fddb0feefe1.setContent(html_a8dcb5262ebd4527ae410832f0fb1b2d);
+        
+
+        marker_f991fe38b7ba4a738d496254f1ab2300.bindPopup(popup_bb114e392f1d42c2b2e15fddb0feefe1)
+        ;
+
+        
+    
+    
+            marker_f991fe38b7ba4a738d496254f1ab2300.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_db703d0a275a424f9223709ece8ee80d = L.marker(
+                [46.208015, 5.221005],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_0d83cddbea5343f29fb3329f61869aca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_db703d0a275a424f9223709ece8ee80d.setIcon(icon_0d83cddbea5343f29fb3329f61869aca);
+        
+    
+        var popup_201387ca6afc4d5db7e2ca274a71ef10 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_106f634363f64712b677fcb0e3458655 = $(`<div id="html_106f634363f64712b677fcb0e3458655" style="width: 100.0%; height: 100.0%;">Appartement</br> 68.0 de macon 1000.0 bourg-en-bresse 01 53 <b>37000€</b></div>`)[0];
+            popup_201387ca6afc4d5db7e2ca274a71ef10.setContent(html_106f634363f64712b677fcb0e3458655);
+        
+
+        marker_db703d0a275a424f9223709ece8ee80d.bindPopup(popup_201387ca6afc4d5db7e2ca274a71ef10)
+        ;
+
+        
+    
+    
+            marker_db703d0a275a424f9223709ece8ee80d.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_17d408f92ee84aa8b8d37c551587cc20 = L.marker(
+                [46.143068, 5.264305],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_290cbb7ba8454a938c329f25b1c9a04e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_17d408f92ee84aa8b8d37c551587cc20.setIcon(icon_290cbb7ba8454a938c329f25b1c9a04e);
+        
+    
+        var popup_dc448b9fa4514c09af86c3cfa4593f0d = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_de01357809104b258e279205a827e474 = $(`<div id="html_de01357809104b258e279205a827e474" style="width: 100.0%; height: 100.0%;">Appartement</br> 5362.0 la morandiere 1240.0 certines 01 69 <b>75000€</b></div>`)[0];
+            popup_dc448b9fa4514c09af86c3cfa4593f0d.setContent(html_de01357809104b258e279205a827e474);
+        
+
+        marker_17d408f92ee84aa8b8d37c551587cc20.bindPopup(popup_dc448b9fa4514c09af86c3cfa4593f0d)
+        ;
+
+        
+    
+    
+            marker_17d408f92ee84aa8b8d37c551587cc20.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_de259e044dfc4b89b6708686e683276a = L.marker(
+                [46.20179, 5.238994],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_2cd7b71b1bb3400187f31e928eb66564 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_de259e044dfc4b89b6708686e683276a.setIcon(icon_2cd7b71b1bb3400187f31e928eb66564);
+        
+    
+        var popup_743e2331e1df4b79b4decc84795bada7 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_31974f336b414b27b3b6a038f9ab75cf = $(`<div id="html_31974f336b414b27b3b6a038f9ab75cf" style="width: 100.0%; height: 100.0%;">Appartement</br> 8.0 vincent benony 1000.0 bourg-en-bresse 01 53 <b>190000€</b></div>`)[0];
+            popup_743e2331e1df4b79b4decc84795bada7.setContent(html_31974f336b414b27b3b6a038f9ab75cf);
+        
+
+        marker_de259e044dfc4b89b6708686e683276a.bindPopup(popup_743e2331e1df4b79b4decc84795bada7)
+        ;
+
+        
+    
+    
+            marker_de259e044dfc4b89b6708686e683276a.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5fe5575c163040c382e85bca66058185 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_a0485b20da434bb2a2c049d2bb6440de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5fe5575c163040c382e85bca66058185.setIcon(icon_a0485b20da434bb2a2c049d2bb6440de);
+        
+    
+        var popup_e7a630aaaded4e4d86dd07c3f887d8ac = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_90d07e5a871f4e81830d036c3bfaf360 = $(`<div id="html_90d07e5a871f4e81830d036c3bfaf360" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_e7a630aaaded4e4d86dd07c3f887d8ac.setContent(html_90d07e5a871f4e81830d036c3bfaf360);
+        
+
+        marker_5fe5575c163040c382e85bca66058185.bindPopup(popup_e7a630aaaded4e4d86dd07c3f887d8ac)
+        ;
+
+        
+    
+    
+            marker_5fe5575c163040c382e85bca66058185.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e4af457714a94d21b6c3fa941f64cdab = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_7155bb778c0e452fa4a641f18da0d4af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e4af457714a94d21b6c3fa941f64cdab.setIcon(icon_7155bb778c0e452fa4a641f18da0d4af);
+        
+    
+        var popup_45121805b75b4626ba54f12d99b52816 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_9772037f199f4cfdb090f91322c2c4b2 = $(`<div id="html_9772037f199f4cfdb090f91322c2c4b2" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_45121805b75b4626ba54f12d99b52816.setContent(html_9772037f199f4cfdb090f91322c2c4b2);
+        
+
+        marker_e4af457714a94d21b6c3fa941f64cdab.bindPopup(popup_45121805b75b4626ba54f12d99b52816)
+        ;
+
+        
+    
+    
+            marker_e4af457714a94d21b6c3fa941f64cdab.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0423e7e5a3ec491c8e08e000b0c8b350 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_da5bdae280b64d20940477a982ca2241 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0423e7e5a3ec491c8e08e000b0c8b350.setIcon(icon_da5bdae280b64d20940477a982ca2241);
+        
+    
+        var popup_549381513c5645d3a4a3dfac06fbccc4 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_c7249fba91a44fd4b3e3dd96905174ce = $(`<div id="html_c7249fba91a44fd4b3e3dd96905174ce" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_549381513c5645d3a4a3dfac06fbccc4.setContent(html_c7249fba91a44fd4b3e3dd96905174ce);
+        
+
+        marker_0423e7e5a3ec491c8e08e000b0c8b350.bindPopup(popup_549381513c5645d3a4a3dfac06fbccc4)
+        ;
+
+        
+    
+    
+            marker_0423e7e5a3ec491c8e08e000b0c8b350.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_31bc9d9af265468cbd859895f181f30b = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_431674d8e97a439fbb0d20834357b355 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_31bc9d9af265468cbd859895f181f30b.setIcon(icon_431674d8e97a439fbb0d20834357b355);
+        
+    
+        var popup_d5182e3a39b34fdfa3c2ad00dda67852 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_b60b68a7041f41fe9df484cae38eb2cf = $(`<div id="html_b60b68a7041f41fe9df484cae38eb2cf" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_d5182e3a39b34fdfa3c2ad00dda67852.setContent(html_b60b68a7041f41fe9df484cae38eb2cf);
+        
+
+        marker_31bc9d9af265468cbd859895f181f30b.bindPopup(popup_d5182e3a39b34fdfa3c2ad00dda67852)
+        ;
+
+        
+    
+    
+            marker_31bc9d9af265468cbd859895f181f30b.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_74d3079d4afc4cc9afd6d74f842bea1e = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_6a1dad7f07d04637b1f0402a56fc90d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_74d3079d4afc4cc9afd6d74f842bea1e.setIcon(icon_6a1dad7f07d04637b1f0402a56fc90d8);
+        
+    
+        var popup_d864ec45c3454830a1492399c2df778f = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_08f10929a05e4b9f8262b5db317e50c4 = $(`<div id="html_08f10929a05e4b9f8262b5db317e50c4" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_d864ec45c3454830a1492399c2df778f.setContent(html_08f10929a05e4b9f8262b5db317e50c4);
+        
+
+        marker_74d3079d4afc4cc9afd6d74f842bea1e.bindPopup(popup_d864ec45c3454830a1492399c2df778f)
+        ;
+
+        
+    
+    
+            marker_74d3079d4afc4cc9afd6d74f842bea1e.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b53ecad03dc0483db00f89b15788d92c = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_ac94e2d6158c4c2eb56107abb1c0978d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b53ecad03dc0483db00f89b15788d92c.setIcon(icon_ac94e2d6158c4c2eb56107abb1c0978d);
+        
+    
+        var popup_5f0680ba88184d0a93ca236fe735816c = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_b0a99fab5ee74d5db0e4f19fdb68bdb0 = $(`<div id="html_b0a99fab5ee74d5db0e4f19fdb68bdb0" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_5f0680ba88184d0a93ca236fe735816c.setContent(html_b0a99fab5ee74d5db0e4f19fdb68bdb0);
+        
+
+        marker_b53ecad03dc0483db00f89b15788d92c.bindPopup(popup_5f0680ba88184d0a93ca236fe735816c)
+        ;
+
+        
+    
+    
+            marker_b53ecad03dc0483db00f89b15788d92c.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4f7c3dd420764410acd519d7fbd5ef00 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_58d78e893879448b9a1cd1d3fef058fe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4f7c3dd420764410acd519d7fbd5ef00.setIcon(icon_58d78e893879448b9a1cd1d3fef058fe);
+        
+    
+        var popup_db2ebd39210b4d30a75b77a810efbade = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_c154ce7d269646f481ccd97ac489df1c = $(`<div id="html_c154ce7d269646f481ccd97ac489df1c" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_db2ebd39210b4d30a75b77a810efbade.setContent(html_c154ce7d269646f481ccd97ac489df1c);
+        
+
+        marker_4f7c3dd420764410acd519d7fbd5ef00.bindPopup(popup_db2ebd39210b4d30a75b77a810efbade)
+        ;
+
+        
+    
+    
+            marker_4f7c3dd420764410acd519d7fbd5ef00.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c223668762e34939a184c26fe5e70da4 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_6829acb26fd84a89930266058d44f161 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c223668762e34939a184c26fe5e70da4.setIcon(icon_6829acb26fd84a89930266058d44f161);
+        
+    
+        var popup_8670ab300172475f90be6796f28a7103 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_827355c32326416d8595257e233e9ab2 = $(`<div id="html_827355c32326416d8595257e233e9ab2" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_8670ab300172475f90be6796f28a7103.setContent(html_827355c32326416d8595257e233e9ab2);
+        
+
+        marker_c223668762e34939a184c26fe5e70da4.bindPopup(popup_8670ab300172475f90be6796f28a7103)
+        ;
+
+        
+    
+    
+            marker_c223668762e34939a184c26fe5e70da4.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eeab67c1f1ba4872ba01d2cf635f0860 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_2f90b98431414511a3c89436ff12e1a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_eeab67c1f1ba4872ba01d2cf635f0860.setIcon(icon_2f90b98431414511a3c89436ff12e1a5);
+        
+    
+        var popup_09833493a6cf480a80ad390424d5b536 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_b0d5225cdb624fbb81879f992a6deeec = $(`<div id="html_b0d5225cdb624fbb81879f992a6deeec" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_09833493a6cf480a80ad390424d5b536.setContent(html_b0d5225cdb624fbb81879f992a6deeec);
+        
+
+        marker_eeab67c1f1ba4872ba01d2cf635f0860.bindPopup(popup_09833493a6cf480a80ad390424d5b536)
+        ;
+
+        
+    
+    
+            marker_eeab67c1f1ba4872ba01d2cf635f0860.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3981d78430994e0c9085c2d69928c122 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_7452985053204fd191aaddb91be3d60b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3981d78430994e0c9085c2d69928c122.setIcon(icon_7452985053204fd191aaddb91be3d60b);
+        
+    
+        var popup_d14fbb7430c64d91b52b60a8d976534a = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_00934eb2faab440284b39b4ec7fce71a = $(`<div id="html_00934eb2faab440284b39b4ec7fce71a" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_d14fbb7430c64d91b52b60a8d976534a.setContent(html_00934eb2faab440284b39b4ec7fce71a);
+        
+
+        marker_3981d78430994e0c9085c2d69928c122.bindPopup(popup_d14fbb7430c64d91b52b60a8d976534a)
+        ;
+
+        
+    
+    
+            marker_3981d78430994e0c9085c2d69928c122.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d1b4fc52797b4fc48b6cb21b293ed7b4 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_affa5f03131b4add919d8e8f8d4ee2e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d1b4fc52797b4fc48b6cb21b293ed7b4.setIcon(icon_affa5f03131b4add919d8e8f8d4ee2e6);
+        
+    
+        var popup_926c7a52ac0843bcb1897958bdd2f767 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_f2c00199af594146913e418471a30528 = $(`<div id="html_f2c00199af594146913e418471a30528" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_926c7a52ac0843bcb1897958bdd2f767.setContent(html_f2c00199af594146913e418471a30528);
+        
+
+        marker_d1b4fc52797b4fc48b6cb21b293ed7b4.bindPopup(popup_926c7a52ac0843bcb1897958bdd2f767)
+        ;
+
+        
+    
+    
+            marker_d1b4fc52797b4fc48b6cb21b293ed7b4.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_28f2bd56505043848ba2adbd06a1386f = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_44b5c5620a1e4666b77a8f8c4c4ba172 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_28f2bd56505043848ba2adbd06a1386f.setIcon(icon_44b5c5620a1e4666b77a8f8c4c4ba172);
+        
+    
+        var popup_2c300c2c9af44b678862a7edbce0ffd9 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_f30b0ed883ba4d0caff987688a92a16c = $(`<div id="html_f30b0ed883ba4d0caff987688a92a16c" style="width: 100.0%; height: 100.0%;">Appartement</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_2c300c2c9af44b678862a7edbce0ffd9.setContent(html_f30b0ed883ba4d0caff987688a92a16c);
+        
+
+        marker_28f2bd56505043848ba2adbd06a1386f.bindPopup(popup_2c300c2c9af44b678862a7edbce0ffd9)
+        ;
+
+        
+    
+    
+            marker_28f2bd56505043848ba2adbd06a1386f.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8c457961477042c0a732c88cec016667 = L.marker(
+                [46.191717, 5.212459],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_f57b9d4962cd43459ab324c3d7d5d779 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8c457961477042c0a732c88cec016667.setIcon(icon_f57b9d4962cd43459ab324c3d7d5d779);
+        
+    
+        var popup_acbb8e04cd6e4bd0817f5b28a3e6195d = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_4a4062ca4d4c4f82a7673cc672225c08 = $(`<div id="html_4a4062ca4d4c4f82a7673cc672225c08" style="width: 100.0%; height: 100.0%;">Appartement</br> 552.0 de lyon 1960.0 peronnas 01 289 <b>84000€</b></div>`)[0];
+            popup_acbb8e04cd6e4bd0817f5b28a3e6195d.setContent(html_4a4062ca4d4c4f82a7673cc672225c08);
+        
+
+        marker_8c457961477042c0a732c88cec016667.bindPopup(popup_acbb8e04cd6e4bd0817f5b28a3e6195d)
+        ;
+
+        
+    
+    
+            marker_8c457961477042c0a732c88cec016667.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_01d8fca3db5041bdbdee6110a2b8a30c = L.marker(
+                [46.201525, 5.230611],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_65e5bccd7cbd481aa17ba2eb764a40bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_01d8fca3db5041bdbdee6110a2b8a30c.setIcon(icon_65e5bccd7cbd481aa17ba2eb764a40bf);
+        
+    
+        var popup_9c4e54f0343e4783ad8d4cf23c9dc3eb = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_d41b6f12a1394d138242f9d9d98482e6 = $(`<div id="html_d41b6f12a1394d138242f9d9d98482e6" style="width: 100.0%; height: 100.0%;">Appartement</br> 7.0 charles guillon 1000.0 bourg-en-bresse 01 53 <b>95000€</b></div>`)[0];
+            popup_9c4e54f0343e4783ad8d4cf23c9dc3eb.setContent(html_d41b6f12a1394d138242f9d9d98482e6);
+        
+
+        marker_01d8fca3db5041bdbdee6110a2b8a30c.bindPopup(popup_9c4e54f0343e4783ad8d4cf23c9dc3eb)
+        ;
+
+        
+    
+    
+            marker_01d8fca3db5041bdbdee6110a2b8a30c.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0ac1c63f9e0842ea878b2436e4525919 = L.marker(
+                [46.19349, 5.239127],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_b4271695aaa84347bd31b04b33bead6f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0ac1c63f9e0842ea878b2436e4525919.setIcon(icon_b4271695aaa84347bd31b04b33bead6f);
+        
+    
+        var popup_7e920f0937cb48c288347102cf360608 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_b34bf1728c264485b6820cab64791b6a = $(`<div id="html_b34bf1728c264485b6820cab64791b6a" style="width: 100.0%; height: 100.0%;">Appartement</br> 6.0 de cuiron 1000.0 bourg-en-bresse 01 53 <b>82000€</b></div>`)[0];
+            popup_7e920f0937cb48c288347102cf360608.setContent(html_b34bf1728c264485b6820cab64791b6a);
+        
+
+        marker_0ac1c63f9e0842ea878b2436e4525919.bindPopup(popup_7e920f0937cb48c288347102cf360608)
+        ;
+
+        
+    
+    
+            marker_0ac1c63f9e0842ea878b2436e4525919.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0e396bd2422947c1bca76f25ed89269f = L.marker(
+                [46.190317, 5.233941],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_3b4ba01880454f50be7f795c86550d0c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0e396bd2422947c1bca76f25ed89269f.setIcon(icon_3b4ba01880454f50be7f795c86550d0c);
+        
+    
+        var popup_834c31563bc64be7908e97e176544752 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_ac1779dc90174335bf0737906c7ffdd1 = $(`<div id="html_ac1779dc90174335bf0737906c7ffdd1" style="width: 100.0%; height: 100.0%;">Appartement</br> 14.0 de l hippodrome 1000.0 bourg-en-bresse 01 53 <b>133000€</b></div>`)[0];
+            popup_834c31563bc64be7908e97e176544752.setContent(html_ac1779dc90174335bf0737906c7ffdd1);
+        
+
+        marker_0e396bd2422947c1bca76f25ed89269f.bindPopup(popup_834c31563bc64be7908e97e176544752)
+        ;
+
+        
+    
+    
+            marker_0e396bd2422947c1bca76f25ed89269f.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_703a8a0f636f45608bbef13578c76443 = L.marker(
+                [46.189196, 5.245083],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_ef2b844d7bb94ead9ae6430da3ebe411 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_703a8a0f636f45608bbef13578c76443.setIcon(icon_ef2b844d7bb94ead9ae6430da3ebe411);
+        
+    
+        var popup_24aba6b949ed40b0b9d1abe20ce7f463 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_73b4b0058241422fa24c31d4a3ac9417 = $(`<div id="html_73b4b0058241422fa24c31d4a3ac9417" style="width: 100.0%; height: 100.0%;">Appartement</br> 52.0 de monte cassino 1000.0 bourg-en-bresse 01 53 <b>102000€</b></div>`)[0];
+            popup_24aba6b949ed40b0b9d1abe20ce7f463.setContent(html_73b4b0058241422fa24c31d4a3ac9417);
+        
+
+        marker_703a8a0f636f45608bbef13578c76443.bindPopup(popup_24aba6b949ed40b0b9d1abe20ce7f463)
+        ;
+
+        
+    
+    
+            marker_703a8a0f636f45608bbef13578c76443.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6baf5927148e48a58395bc9523c66ff5 = L.marker(
+                [46.796754, 4.913775],
+                {}
+            ).addTo(feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15);
+        
+    
+            var icon_10e786ceb85a45f6829099f4081b7649 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "pause", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6baf5927148e48a58395bc9523c66ff5.setIcon(icon_10e786ceb85a45f6829099f4081b7649);
+        
+    
+        var popup_61c4fa21d2534cc5b01924322be06d34 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_051d56ee131a4c668ea018515e1242e3 = $(`<div id="html_051d56ee131a4c668ea018515e1242e3" style="width: 100.0%; height: 100.0%;">Appartement</br> 6.0 de l est 1000.0 bourg-en-bresse 01 53 <b>108000€</b></div>`)[0];
+            popup_61c4fa21d2534cc5b01924322be06d34.setContent(html_051d56ee131a4c668ea018515e1242e3);
+        
+
+        marker_6baf5927148e48a58395bc9523c66ff5.bindPopup(popup_61c4fa21d2534cc5b01924322be06d34)
+        ;
+
+        
+    
+    
+            marker_6baf5927148e48a58395bc9523c66ff5.bindTooltip(
+                `<div>
+                     Appartement
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10 = L.featureGroup.subGroup(
+                marker_cluster_555a3e73119e4204819038a6b3e644d7
+            );
+            feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10.addTo(map_25f6c0a84bbd4e4e8b4168495358283b);
+        
+    
+            var marker_15654f281abe46349126e86a91822d9a = L.marker(
+                [46.200278, 5.220267],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_5227760f2d814aa2b8ace9e2427e26d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_15654f281abe46349126e86a91822d9a.setIcon(icon_5227760f2d814aa2b8ace9e2427e26d9);
+        
+    
+        var popup_f32c081c3ed94eb1afae7ed2ab27b6d3 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_ef52d399077a4d8ab8b6b7d335765bda = $(`<div id="html_ef52d399077a4d8ab8b6b7d335765bda" style="width: 100.0%; height: 100.0%;">Dépendance</br> 22.0 gen delestraint 1000.0 bourg-en-bresse 01 53 <b>185100€</b></div>`)[0];
+            popup_f32c081c3ed94eb1afae7ed2ab27b6d3.setContent(html_ef52d399077a4d8ab8b6b7d335765bda);
+        
+
+        marker_15654f281abe46349126e86a91822d9a.bindPopup(popup_f32c081c3ed94eb1afae7ed2ab27b6d3)
+        ;
+
+        
+    
+    
+            marker_15654f281abe46349126e86a91822d9a.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e4e12dd1a913496c9a4dc427fa43da49 = L.marker(
+                [46.205506, 5.448766],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_ccbe43a0c4e449c1816b23a4e1263bb2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_e4e12dd1a913496c9a4dc427fa43da49.setIcon(icon_ccbe43a0c4e449c1816b23a4e1263bb2);
+        
+    
+        var popup_62deacddc929404a91a0aad5f01c1f6a = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_1ff8f5a6c9874d2f8c07a2788596fe72 = $(`<div id="html_1ff8f5a6c9874d2f8c07a2788596fe72" style="width: 100.0%; height: 100.0%;">nan</br> nan sur la latie 1250.0 cize 01 106 <b>45000€</b></div>`)[0];
+            popup_62deacddc929404a91a0aad5f01c1f6a.setContent(html_1ff8f5a6c9874d2f8c07a2788596fe72);
+        
+
+        marker_e4e12dd1a913496c9a4dc427fa43da49.bindPopup(popup_62deacddc929404a91a0aad5f01c1f6a)
+        ;
+
+        
+    
+    
+            marker_e4e12dd1a913496c9a4dc427fa43da49.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7cc679c030fb41dc9bae700417a921f9 = L.marker(
+                [46.197814, 5.222037],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_c5164a42a4544706b1fac4ebe2e8a746 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_7cc679c030fb41dc9bae700417a921f9.setIcon(icon_c5164a42a4544706b1fac4ebe2e8a746);
+        
+    
+        var popup_ff810febdbb3499197aaa13f2b45be36 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_fc159152c12243e09163aa64762c981e = $(`<div id="html_fc159152c12243e09163aa64762c981e" style="width: 100.0%; height: 100.0%;">Dépendance</br> 50.0 doc nodet 1000.0 bourg-en-bresse 01 53 <b>65000€</b></div>`)[0];
+            popup_ff810febdbb3499197aaa13f2b45be36.setContent(html_fc159152c12243e09163aa64762c981e);
+        
+
+        marker_7cc679c030fb41dc9bae700417a921f9.bindPopup(popup_ff810febdbb3499197aaa13f2b45be36)
+        ;
+
+        
+    
+    
+            marker_7cc679c030fb41dc9bae700417a921f9.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_88ceb69e954344a6bf708c95a0718218 = L.marker(
+                [46.139264, 5.305758],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_7eaba5d732614fc489dcfae8473bb0ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_88ceb69e954344a6bf708c95a0718218.setIcon(icon_7eaba5d732614fc489dcfae8473bb0ed);
+        
+    
+        var popup_4ff0b78f96d44c91b4ee4d960748a2f6 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_9899e2a82f404fc3b9f2a2b1c568d2ce = $(`<div id="html_9899e2a82f404fc3b9f2a2b1c568d2ce" style="width: 100.0%; height: 100.0%;">nan</br> nan en chevret 1250.0 tossiat 01 422 <b>70€</b></div>`)[0];
+            popup_4ff0b78f96d44c91b4ee4d960748a2f6.setContent(html_9899e2a82f404fc3b9f2a2b1c568d2ce);
+        
+
+        marker_88ceb69e954344a6bf708c95a0718218.bindPopup(popup_4ff0b78f96d44c91b4ee4d960748a2f6)
+        ;
+
+        
+    
+    
+            marker_88ceb69e954344a6bf708c95a0718218.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e1252c2fa52e425295df78d4c7618a86 = L.marker(
+                [46.139264, 5.305758],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_383953d1893f47a6893c9064f6719331 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_e1252c2fa52e425295df78d4c7618a86.setIcon(icon_383953d1893f47a6893c9064f6719331);
+        
+    
+        var popup_f3c384973a404e4692361453e42e643e = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_3405d1d5793e403890b4c1a77bf5153a = $(`<div id="html_3405d1d5793e403890b4c1a77bf5153a" style="width: 100.0%; height: 100.0%;">nan</br> nan en chevret 1250.0 tossiat 01 422 <b>70€</b></div>`)[0];
+            popup_f3c384973a404e4692361453e42e643e.setContent(html_3405d1d5793e403890b4c1a77bf5153a);
+        
+
+        marker_e1252c2fa52e425295df78d4c7618a86.bindPopup(popup_f3c384973a404e4692361453e42e643e)
+        ;
+
+        
+    
+    
+            marker_e1252c2fa52e425295df78d4c7618a86.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6ca6fa9872a64a519c2b030a0bd312c6 = L.marker(
+                [46.312099, 5.120475],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_85af1fba6a7e4e9fb100a19b78af0f33 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_6ca6fa9872a64a519c2b030a0bd312c6.setIcon(icon_85af1fba6a7e4e9fb100a19b78af0f33);
+        
+    
+        var popup_92aa13ee1686420d80555d21f0b7c788 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_ba9a5a3f7f074d42b28d7382401963a0 = $(`<div id="html_ba9a5a3f7f074d42b28d7382401963a0" style="width: 100.0%; height: 100.0%;">nan</br> nan cuet 1340.0 montrevel-en-bresse 01 266 <b>266000€</b></div>`)[0];
+            popup_92aa13ee1686420d80555d21f0b7c788.setContent(html_ba9a5a3f7f074d42b28d7382401963a0);
+        
+
+        marker_6ca6fa9872a64a519c2b030a0bd312c6.bindPopup(popup_92aa13ee1686420d80555d21f0b7c788)
+        ;
+
+        
+    
+    
+            marker_6ca6fa9872a64a519c2b030a0bd312c6.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2c0051517ac488194907d5609fecaac = L.marker(
+                [46.312099, 5.120475],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_02841a38bacc4fe7a3e59b02da65bf91 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_d2c0051517ac488194907d5609fecaac.setIcon(icon_02841a38bacc4fe7a3e59b02da65bf91);
+        
+    
+        var popup_a73c40370ee941378426455bc9d3b625 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_12b24fea4037460bba91f859a3248820 = $(`<div id="html_12b24fea4037460bba91f859a3248820" style="width: 100.0%; height: 100.0%;">nan</br> nan cuet 1340.0 montrevel-en-bresse 01 266 <b>266000€</b></div>`)[0];
+            popup_a73c40370ee941378426455bc9d3b625.setContent(html_12b24fea4037460bba91f859a3248820);
+        
+
+        marker_d2c0051517ac488194907d5609fecaac.bindPopup(popup_a73c40370ee941378426455bc9d3b625)
+        ;
+
+        
+    
+    
+            marker_d2c0051517ac488194907d5609fecaac.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2949dc72220a45fbb697ff93c72f84d5 = L.marker(
+                [46.330941, 5.119193],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_033d6beeb4e44481802d6f4766f00ce2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_2949dc72220a45fbb697ff93c72f84d5.setIcon(icon_033d6beeb4e44481802d6f4766f00ce2);
+        
+    
+        var popup_90a0a3da8d1a435bba54f22d3209a830 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_0a7831e9e11d4362936f1a44a55cfcc5 = $(`<div id="html_0a7831e9e11d4362936f1a44a55cfcc5" style="width: 100.0%; height: 100.0%;">Dépendance</br> 1250.0 de cuet 1340.0 montrevel-en-bresse 01 266 <b>266000€</b></div>`)[0];
+            popup_90a0a3da8d1a435bba54f22d3209a830.setContent(html_0a7831e9e11d4362936f1a44a55cfcc5);
+        
+
+        marker_2949dc72220a45fbb697ff93c72f84d5.bindPopup(popup_90a0a3da8d1a435bba54f22d3209a830)
+        ;
+
+        
+    
+    
+            marker_2949dc72220a45fbb697ff93c72f84d5.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9c66af75c624fa39db3403f5d6a6fda = L.marker(
+                [46.312099, 5.120475],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_d2a1914ae0a24a4c80bdc89cdd1573f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_a9c66af75c624fa39db3403f5d6a6fda.setIcon(icon_d2a1914ae0a24a4c80bdc89cdd1573f9);
+        
+    
+        var popup_6fc72fc9f6d64b33ba19bef6cbafe0ba = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_a0aed2afaec0403faab10fca641ef590 = $(`<div id="html_a0aed2afaec0403faab10fca641ef590" style="width: 100.0%; height: 100.0%;">nan</br> nan cuet 1340.0 montrevel-en-bresse 01 266 <b>266000€</b></div>`)[0];
+            popup_6fc72fc9f6d64b33ba19bef6cbafe0ba.setContent(html_a0aed2afaec0403faab10fca641ef590);
+        
+
+        marker_a9c66af75c624fa39db3403f5d6a6fda.bindPopup(popup_6fc72fc9f6d64b33ba19bef6cbafe0ba)
+        ;
+
+        
+    
+    
+            marker_a9c66af75c624fa39db3403f5d6a6fda.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d38ee71be4924d26b2234252dfb2a5f7 = L.marker(
+                [46.480036, 5.109369],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_4d2864b197434e2ca8a479eb5fab0a5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_d38ee71be4924d26b2234252dfb2a5f7.setIcon(icon_4d2864b197434e2ca8a479eb5fab0a5c);
+        
+    
+        var popup_0c09ac98ee7341219a2dea2a62597bac = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_33e4f15e78f6472e8381646cd3783ac4 = $(`<div id="html_33e4f15e78f6472e8381646cd3783ac4" style="width: 100.0%; height: 100.0%;">Dépendance</br> 181.0 de vernoux 1560.0 courtes 01 128 <b>138100€</b></div>`)[0];
+            popup_0c09ac98ee7341219a2dea2a62597bac.setContent(html_33e4f15e78f6472e8381646cd3783ac4);
+        
+
+        marker_d38ee71be4924d26b2234252dfb2a5f7.bindPopup(popup_0c09ac98ee7341219a2dea2a62597bac)
+        ;
+
+        
+    
+    
+            marker_d38ee71be4924d26b2234252dfb2a5f7.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a8a9d3fa94184122829cea6818ad016b = L.marker(
+                [46.463243, 5.042093],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_d2b752561fe2487dac145971804fef51 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_a8a9d3fa94184122829cea6818ad016b.setIcon(icon_d2b752561fe2487dac145971804fef51);
+        
+    
+        var popup_091fcf73bdbd4abc80bdcab910c9c3b8 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_1955350cc3a741608a6bbfdec032e006 = $(`<div id="html_1955350cc3a741608a6bbfdec032e006" style="width: 100.0%; height: 100.0%;">nan</br> nan crocu 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_091fcf73bdbd4abc80bdcab910c9c3b8.setContent(html_1955350cc3a741608a6bbfdec032e006);
+        
+
+        marker_a8a9d3fa94184122829cea6818ad016b.bindPopup(popup_091fcf73bdbd4abc80bdcab910c9c3b8)
+        ;
+
+        
+    
+    
+            marker_a8a9d3fa94184122829cea6818ad016b.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6cc23eb6fb3d4021a62086e09f879915 = L.marker(
+                [46.467064, 5.08671],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_5b9be06263aa4959bab6da099860feb3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_6cc23eb6fb3d4021a62086e09f879915.setIcon(icon_5b9be06263aa4959bab6da099860feb3);
+        
+    
+        var popup_af7eb359cb4542d48f42ad9a64df355d = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_5b4c5841d9124f308394c4eb348e9f00 = $(`<div id="html_5b4c5841d9124f308394c4eb348e9f00" style="width: 100.0%; height: 100.0%;">nan</br> nan le piochay 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_af7eb359cb4542d48f42ad9a64df355d.setContent(html_5b4c5841d9124f308394c4eb348e9f00);
+        
+
+        marker_6cc23eb6fb3d4021a62086e09f879915.bindPopup(popup_af7eb359cb4542d48f42ad9a64df355d)
+        ;
+
+        
+    
+    
+            marker_6cc23eb6fb3d4021a62086e09f879915.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e5778b7b1b8d4756ba5289a4c73392a4 = L.marker(
+                [46.467064, 5.08671],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_66cb4740460449bfb8e8c8939136f705 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_e5778b7b1b8d4756ba5289a4c73392a4.setIcon(icon_66cb4740460449bfb8e8c8939136f705);
+        
+    
+        var popup_d2d540f2b5674f3ba3b8bd4bfeaea29c = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_8b6a30f0dc624fa092b99b8ac59ca249 = $(`<div id="html_8b6a30f0dc624fa092b99b8ac59ca249" style="width: 100.0%; height: 100.0%;">nan</br> nan le piochay 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_d2d540f2b5674f3ba3b8bd4bfeaea29c.setContent(html_8b6a30f0dc624fa092b99b8ac59ca249);
+        
+
+        marker_e5778b7b1b8d4756ba5289a4c73392a4.bindPopup(popup_d2d540f2b5674f3ba3b8bd4bfeaea29c)
+        ;
+
+        
+    
+    
+            marker_e5778b7b1b8d4756ba5289a4c73392a4.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f1483c41adef4b05aea4d7e6c2f5f166 = L.marker(
+                [46.457038, 5.05338],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_37a6a39209cf4246bf3fca34ee41ba43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_f1483c41adef4b05aea4d7e6c2f5f166.setIcon(icon_37a6a39209cf4246bf3fca34ee41ba43);
+        
+    
+        var popup_2c95154bd37d430ab10d46d503e32459 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_dfa3e1d9d543400b8645f6cab0441c34 = $(`<div id="html_dfa3e1d9d543400b8645f6cab0441c34" style="width: 100.0%; height: 100.0%;">nan</br> nan grandval 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_2c95154bd37d430ab10d46d503e32459.setContent(html_dfa3e1d9d543400b8645f6cab0441c34);
+        
+
+        marker_f1483c41adef4b05aea4d7e6c2f5f166.bindPopup(popup_2c95154bd37d430ab10d46d503e32459)
+        ;
+
+        
+    
+    
+            marker_f1483c41adef4b05aea4d7e6c2f5f166.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_da076fbc42c34f26b32511773871aac1 = L.marker(
+                [46.467064, 5.08671],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_b2b0bfaa09874066a1913d89bccc9a7a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_da076fbc42c34f26b32511773871aac1.setIcon(icon_b2b0bfaa09874066a1913d89bccc9a7a);
+        
+    
+        var popup_d13cbdb3c0104654a52917c86bccf15e = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_fd5db9e23c0840268a4f2b81989d6762 = $(`<div id="html_fd5db9e23c0840268a4f2b81989d6762" style="width: 100.0%; height: 100.0%;">nan</br> nan le piochay 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_d13cbdb3c0104654a52917c86bccf15e.setContent(html_fd5db9e23c0840268a4f2b81989d6762);
+        
+
+        marker_da076fbc42c34f26b32511773871aac1.bindPopup(popup_d13cbdb3c0104654a52917c86bccf15e)
+        ;
+
+        
+    
+    
+            marker_da076fbc42c34f26b32511773871aac1.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e2684e7f5e23416a88f09db43cb9489a = L.marker(
+                [46.467064, 5.08671],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_8dedc3d01dd341169330330b9e24c0b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_e2684e7f5e23416a88f09db43cb9489a.setIcon(icon_8dedc3d01dd341169330330b9e24c0b3);
+        
+    
+        var popup_257cf4c64b434c9a8063d0fae7de67a0 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_b0af9534f5e446a692272ac8a701c81d = $(`<div id="html_b0af9534f5e446a692272ac8a701c81d" style="width: 100.0%; height: 100.0%;">nan</br> nan le piochay 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_257cf4c64b434c9a8063d0fae7de67a0.setContent(html_b0af9534f5e446a692272ac8a701c81d);
+        
+
+        marker_e2684e7f5e23416a88f09db43cb9489a.bindPopup(popup_257cf4c64b434c9a8063d0fae7de67a0)
+        ;
+
+        
+    
+    
+            marker_e2684e7f5e23416a88f09db43cb9489a.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_16c42eeebac744d793012e4b0d9b4ca9 = L.marker(
+                [46.467064, 5.08671],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_8cf6efd9b9db4f679cc444092edc486b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_16c42eeebac744d793012e4b0d9b4ca9.setIcon(icon_8cf6efd9b9db4f679cc444092edc486b);
+        
+    
+        var popup_f057b8d5c65146e682f3b562e3d649ad = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_fb0dd00527d44d3f8a860010902e6f61 = $(`<div id="html_fb0dd00527d44d3f8a860010902e6f61" style="width: 100.0%; height: 100.0%;">nan</br> nan le piochay 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_f057b8d5c65146e682f3b562e3d649ad.setContent(html_fb0dd00527d44d3f8a860010902e6f61);
+        
+
+        marker_16c42eeebac744d793012e4b0d9b4ca9.bindPopup(popup_f057b8d5c65146e682f3b562e3d649ad)
+        ;
+
+        
+    
+    
+            marker_16c42eeebac744d793012e4b0d9b4ca9.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b74d6dfdf1424192a925c86e69535a7f = L.marker(
+                [46.459626, 5.066047],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_4c64cd688be0472b82ac077f161ecd82 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_b74d6dfdf1424192a925c86e69535a7f.setIcon(icon_4c64cd688be0472b82ac077f161ecd82);
+        
+    
+        var popup_b320ff8ba2a44bebb320d256e8a43c83 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_189c766df548485fa4e4eb222aa14d30 = $(`<div id="html_189c766df548485fa4e4eb222aa14d30" style="width: 100.0%; height: 100.0%;">nan</br> nan farnoz 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_b320ff8ba2a44bebb320d256e8a43c83.setContent(html_189c766df548485fa4e4eb222aa14d30);
+        
+
+        marker_b74d6dfdf1424192a925c86e69535a7f.bindPopup(popup_b320ff8ba2a44bebb320d256e8a43c83)
+        ;
+
+        
+    
+    
+            marker_b74d6dfdf1424192a925c86e69535a7f.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_01e21fb0ed6a46ffbdce31a1ea76cbdf = L.marker(
+                [46.459626, 5.066047],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_b90bc9af0e1d423e86af55c1f4df4f90 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_01e21fb0ed6a46ffbdce31a1ea76cbdf.setIcon(icon_b90bc9af0e1d423e86af55c1f4df4f90);
+        
+    
+        var popup_57f668ed8e7b4e8d84d21977b9b92c45 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_c7f1213034ae4425b3e90cc5a898d310 = $(`<div id="html_c7f1213034ae4425b3e90cc5a898d310" style="width: 100.0%; height: 100.0%;">nan</br> nan farnoz 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_57f668ed8e7b4e8d84d21977b9b92c45.setContent(html_c7f1213034ae4425b3e90cc5a898d310);
+        
+
+        marker_01e21fb0ed6a46ffbdce31a1ea76cbdf.bindPopup(popup_57f668ed8e7b4e8d84d21977b9b92c45)
+        ;
+
+        
+    
+    
+            marker_01e21fb0ed6a46ffbdce31a1ea76cbdf.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_adeb8dd1b4a243768d6ece642c774ef9 = L.marker(
+                [46.459626, 5.066047],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_3190d69f30c54e01958d1c16f2691f57 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_adeb8dd1b4a243768d6ece642c774ef9.setIcon(icon_3190d69f30c54e01958d1c16f2691f57);
+        
+    
+        var popup_443e95c78f9340659639cc49726547da = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_32e9c2dddc594e5c91c7a403ebdf872e = $(`<div id="html_32e9c2dddc594e5c91c7a403ebdf872e" style="width: 100.0%; height: 100.0%;">nan</br> nan farnoz 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_443e95c78f9340659639cc49726547da.setContent(html_32e9c2dddc594e5c91c7a403ebdf872e);
+        
+
+        marker_adeb8dd1b4a243768d6ece642c774ef9.bindPopup(popup_443e95c78f9340659639cc49726547da)
+        ;
+
+        
+    
+    
+            marker_adeb8dd1b4a243768d6ece642c774ef9.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1dfbf221fda14cb68a90d09172f0fdfc = L.marker(
+                [46.459626, 5.066047],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_c4d26c9e65ea47aa8d6b1dc2cb9a33ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_1dfbf221fda14cb68a90d09172f0fdfc.setIcon(icon_c4d26c9e65ea47aa8d6b1dc2cb9a33ab);
+        
+    
+        var popup_811c7fe781c2421bbef5f5b211004ee9 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_c912266cc7fc458b9933873c458a23e9 = $(`<div id="html_c912266cc7fc458b9933873c458a23e9" style="width: 100.0%; height: 100.0%;">nan</br> nan farnoz 1560.0 saint-trivier-de-courtes 01 388 <b>7570€</b></div>`)[0];
+            popup_811c7fe781c2421bbef5f5b211004ee9.setContent(html_c912266cc7fc458b9933873c458a23e9);
+        
+
+        marker_1dfbf221fda14cb68a90d09172f0fdfc.bindPopup(popup_811c7fe781c2421bbef5f5b211004ee9)
+        ;
+
+        
+    
+    
+            marker_1dfbf221fda14cb68a90d09172f0fdfc.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_01946266363f418781c607756b7df2ce = L.marker(
+                [46.456925, 5.065561],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_21483bc68dea4e21be991c53478f0f3e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_01946266363f418781c607756b7df2ce.setIcon(icon_21483bc68dea4e21be991c53478f0f3e);
+        
+    
+        var popup_7434cb55c14e4f11853498bc145861cd = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_1327250cae3048e3a0ecc93e3226e368 = $(`<div id="html_1327250cae3048e3a0ecc93e3226e368" style="width: 100.0%; height: 100.0%;">Dépendance</br> 5575.0 molardoury 1560.0 saint-trivier-de-courtes 01 388 <b>15000€</b></div>`)[0];
+            popup_7434cb55c14e4f11853498bc145861cd.setContent(html_1327250cae3048e3a0ecc93e3226e368);
+        
+
+        marker_01946266363f418781c607756b7df2ce.bindPopup(popup_7434cb55c14e4f11853498bc145861cd)
+        ;
+
+        
+    
+    
+            marker_01946266363f418781c607756b7df2ce.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d8aac65c8d0c451ebd5bdd32a5f41d4f = L.marker(
+                [49.619193, 2.610881],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_3ff1c1d296c648e082e630cdcaae4c2d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_d8aac65c8d0c451ebd5bdd32a5f41d4f.setIcon(icon_3ff1c1d296c648e082e630cdcaae4c2d);
+        
+    
+        var popup_c45060b8a9e945f2a891d3679f9770cf = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_24e97acc9e2a432789e0a53b0f24861b = $(`<div id="html_24e97acc9e2a432789e0a53b0f24861b" style="width: 100.0%; height: 100.0%;">nan</br> nan montdidier 1310.0 montracol 01 264 <b>207000€</b></div>`)[0];
+            popup_c45060b8a9e945f2a891d3679f9770cf.setContent(html_24e97acc9e2a432789e0a53b0f24861b);
+        
+
+        marker_d8aac65c8d0c451ebd5bdd32a5f41d4f.bindPopup(popup_c45060b8a9e945f2a891d3679f9770cf)
+        ;
+
+        
+    
+    
+            marker_d8aac65c8d0c451ebd5bdd32a5f41d4f.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bec4a611dd544b1eb584f1727222e41c = L.marker(
+                [46.217932, 5.146761],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_c9c0619673cb4f11ab2817d95df14610 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_bec4a611dd544b1eb584f1727222e41c.setIcon(icon_c9c0619673cb4f11ab2817d95df14610);
+        
+    
+        var popup_b8fd105f90fa4229b95023cac3195b53 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_223f9c979ff449dcaba8026a7185f4f0 = $(`<div id="html_223f9c979ff449dcaba8026a7185f4f0" style="width: 100.0%; height: 100.0%;">nan</br> nan chamambard 1310.0 buellas 01 65 <b>3040€</b></div>`)[0];
+            popup_b8fd105f90fa4229b95023cac3195b53.setContent(html_223f9c979ff449dcaba8026a7185f4f0);
+        
+
+        marker_bec4a611dd544b1eb584f1727222e41c.bindPopup(popup_b8fd105f90fa4229b95023cac3195b53)
+        ;
+
+        
+    
+    
+            marker_bec4a611dd544b1eb584f1727222e41c.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bb65aec33c84bde832a2c5203194154 = L.marker(
+                [46.20179, 5.238994],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_8b55074c78f1431a8e65c4b2d7f61699 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_9bb65aec33c84bde832a2c5203194154.setIcon(icon_8b55074c78f1431a8e65c4b2d7f61699);
+        
+    
+        var popup_e411f1e44fe1429590cd703d77eb7581 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_a7356b75e0d34811a93828453779c5e6 = $(`<div id="html_a7356b75e0d34811a93828453779c5e6" style="width: 100.0%; height: 100.0%;">Dépendance</br> 8.0 vincent benony 1000.0 bourg-en-bresse 01 53 <b>190000€</b></div>`)[0];
+            popup_e411f1e44fe1429590cd703d77eb7581.setContent(html_a7356b75e0d34811a93828453779c5e6);
+        
+
+        marker_9bb65aec33c84bde832a2c5203194154.bindPopup(popup_e411f1e44fe1429590cd703d77eb7581)
+        ;
+
+        
+    
+    
+            marker_9bb65aec33c84bde832a2c5203194154.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a63771f5472640d8b764f9902be148f0 = L.marker(
+                [46.20179, 5.238994],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_90248e28ffdd4decb26e364655f6498b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_a63771f5472640d8b764f9902be148f0.setIcon(icon_90248e28ffdd4decb26e364655f6498b);
+        
+    
+        var popup_2539e4fd25334feaa9b0c1c11c463870 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_90df2159cc4442b0af439620e6f2456c = $(`<div id="html_90df2159cc4442b0af439620e6f2456c" style="width: 100.0%; height: 100.0%;">Dépendance</br> 8.0 vincent benony 1000.0 bourg-en-bresse 01 53 <b>190000€</b></div>`)[0];
+            popup_2539e4fd25334feaa9b0c1c11c463870.setContent(html_90df2159cc4442b0af439620e6f2456c);
+        
+
+        marker_a63771f5472640d8b764f9902be148f0.bindPopup(popup_2539e4fd25334feaa9b0c1c11c463870)
+        ;
+
+        
+    
+    
+            marker_a63771f5472640d8b764f9902be148f0.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e45404e19fa1457296dad921a67c2176 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_7b23a9611d134738909ab10163ea3266 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_e45404e19fa1457296dad921a67c2176.setIcon(icon_7b23a9611d134738909ab10163ea3266);
+        
+    
+        var popup_098a83a779494c91840eec4825e84b03 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_dc15b6e344a84ec2ac0f04d2a764f909 = $(`<div id="html_dc15b6e344a84ec2ac0f04d2a764f909" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_098a83a779494c91840eec4825e84b03.setContent(html_dc15b6e344a84ec2ac0f04d2a764f909);
+        
+
+        marker_e45404e19fa1457296dad921a67c2176.bindPopup(popup_098a83a779494c91840eec4825e84b03)
+        ;
+
+        
+    
+    
+            marker_e45404e19fa1457296dad921a67c2176.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a68790cdf2ca4f41afaf442f5fa13598 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_4818d72f20584126bbdb50ef32d355ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_a68790cdf2ca4f41afaf442f5fa13598.setIcon(icon_4818d72f20584126bbdb50ef32d355ff);
+        
+    
+        var popup_4d5310a2a7344499bc788ce3633adac3 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_016d903cd0974e71b2376627943d4e57 = $(`<div id="html_016d903cd0974e71b2376627943d4e57" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_4d5310a2a7344499bc788ce3633adac3.setContent(html_016d903cd0974e71b2376627943d4e57);
+        
+
+        marker_a68790cdf2ca4f41afaf442f5fa13598.bindPopup(popup_4d5310a2a7344499bc788ce3633adac3)
+        ;
+
+        
+    
+    
+            marker_a68790cdf2ca4f41afaf442f5fa13598.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b16289215ba94f039cb1b6f8285e754c = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_80a7f53e6dc14c0bad5f7c4868ea42f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_b16289215ba94f039cb1b6f8285e754c.setIcon(icon_80a7f53e6dc14c0bad5f7c4868ea42f5);
+        
+    
+        var popup_83db5e5b220442b2823cb7184e975cc4 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_f6c84870e72c4909b26e3393baca0de4 = $(`<div id="html_f6c84870e72c4909b26e3393baca0de4" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_83db5e5b220442b2823cb7184e975cc4.setContent(html_f6c84870e72c4909b26e3393baca0de4);
+        
+
+        marker_b16289215ba94f039cb1b6f8285e754c.bindPopup(popup_83db5e5b220442b2823cb7184e975cc4)
+        ;
+
+        
+    
+    
+            marker_b16289215ba94f039cb1b6f8285e754c.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f0ee7b558754204a0fd294baa8810a2 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_9a26d7a3c1f545759694b29605fa8668 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_6f0ee7b558754204a0fd294baa8810a2.setIcon(icon_9a26d7a3c1f545759694b29605fa8668);
+        
+    
+        var popup_1320a9c41c704b639fde0e78e24e32e6 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_b61a0e0d23694f27a34106f3d192cb53 = $(`<div id="html_b61a0e0d23694f27a34106f3d192cb53" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_1320a9c41c704b639fde0e78e24e32e6.setContent(html_b61a0e0d23694f27a34106f3d192cb53);
+        
+
+        marker_6f0ee7b558754204a0fd294baa8810a2.bindPopup(popup_1320a9c41c704b639fde0e78e24e32e6)
+        ;
+
+        
+    
+    
+            marker_6f0ee7b558754204a0fd294baa8810a2.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dc0ec7108a0d4f4cb79b00bbd66db777 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_af5cd8ae306b45788a25c565a012781a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_dc0ec7108a0d4f4cb79b00bbd66db777.setIcon(icon_af5cd8ae306b45788a25c565a012781a);
+        
+    
+        var popup_871d7ba910914ebface7b4d00806b6cb = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_7aa31c09556448f0a60e243e385c6c6b = $(`<div id="html_7aa31c09556448f0a60e243e385c6c6b" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_871d7ba910914ebface7b4d00806b6cb.setContent(html_7aa31c09556448f0a60e243e385c6c6b);
+        
+
+        marker_dc0ec7108a0d4f4cb79b00bbd66db777.bindPopup(popup_871d7ba910914ebface7b4d00806b6cb)
+        ;
+
+        
+    
+    
+            marker_dc0ec7108a0d4f4cb79b00bbd66db777.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c466923c89384daf960bf496d213ce86 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_31cd7fd57cb446a3bc5173ce9fea074f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_c466923c89384daf960bf496d213ce86.setIcon(icon_31cd7fd57cb446a3bc5173ce9fea074f);
+        
+    
+        var popup_be5daae9b0124a2894e213a07d56e316 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_3192b085f7564588b4dd4315c5df402c = $(`<div id="html_3192b085f7564588b4dd4315c5df402c" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_be5daae9b0124a2894e213a07d56e316.setContent(html_3192b085f7564588b4dd4315c5df402c);
+        
+
+        marker_c466923c89384daf960bf496d213ce86.bindPopup(popup_be5daae9b0124a2894e213a07d56e316)
+        ;
+
+        
+    
+    
+            marker_c466923c89384daf960bf496d213ce86.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_13458fd423aa4436a143b518d3f76592 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_07c912021186460da6d328977f9d9e4b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_13458fd423aa4436a143b518d3f76592.setIcon(icon_07c912021186460da6d328977f9d9e4b);
+        
+    
+        var popup_e470668b785e44a8a6d3151b94c5aa28 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_e036488b001442108bc122b1b45b5762 = $(`<div id="html_e036488b001442108bc122b1b45b5762" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_e470668b785e44a8a6d3151b94c5aa28.setContent(html_e036488b001442108bc122b1b45b5762);
+        
+
+        marker_13458fd423aa4436a143b518d3f76592.bindPopup(popup_e470668b785e44a8a6d3151b94c5aa28)
+        ;
+
+        
+    
+    
+            marker_13458fd423aa4436a143b518d3f76592.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b44b7c1e377e4f19805cd2857dbdb2b8 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_dbc644d317d041edbbdc41486b1bc82f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_b44b7c1e377e4f19805cd2857dbdb2b8.setIcon(icon_dbc644d317d041edbbdc41486b1bc82f);
+        
+    
+        var popup_18e8143513074585bcc8c81903c3f152 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_c140397c4f6040e2a76dcc1922ba6a36 = $(`<div id="html_c140397c4f6040e2a76dcc1922ba6a36" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_18e8143513074585bcc8c81903c3f152.setContent(html_c140397c4f6040e2a76dcc1922ba6a36);
+        
+
+        marker_b44b7c1e377e4f19805cd2857dbdb2b8.bindPopup(popup_18e8143513074585bcc8c81903c3f152)
+        ;
+
+        
+    
+    
+            marker_b44b7c1e377e4f19805cd2857dbdb2b8.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8827fc703e624dc4b11e8c1955bbd454 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_f2744e85128b4d97a9e9ea45d9dcbfb1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_8827fc703e624dc4b11e8c1955bbd454.setIcon(icon_f2744e85128b4d97a9e9ea45d9dcbfb1);
+        
+    
+        var popup_1f92692ce6564b04984902e8553caadc = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_1b1a8bb512ad429fa16a2bbbf5e49906 = $(`<div id="html_1b1a8bb512ad429fa16a2bbbf5e49906" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_1f92692ce6564b04984902e8553caadc.setContent(html_1b1a8bb512ad429fa16a2bbbf5e49906);
+        
+
+        marker_8827fc703e624dc4b11e8c1955bbd454.bindPopup(popup_1f92692ce6564b04984902e8553caadc)
+        ;
+
+        
+    
+    
+            marker_8827fc703e624dc4b11e8c1955bbd454.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3892df6e7e5444c6928fafc71c95676a = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_f5bac96de21a4ad681e3b77c63a905ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_3892df6e7e5444c6928fafc71c95676a.setIcon(icon_f5bac96de21a4ad681e3b77c63a905ab);
+        
+    
+        var popup_8cad8932436a4dcb8e3fdb5ec4f537bf = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_d7fb329c74bb4aee8c095eb06da20763 = $(`<div id="html_d7fb329c74bb4aee8c095eb06da20763" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_8cad8932436a4dcb8e3fdb5ec4f537bf.setContent(html_d7fb329c74bb4aee8c095eb06da20763);
+        
+
+        marker_3892df6e7e5444c6928fafc71c95676a.bindPopup(popup_8cad8932436a4dcb8e3fdb5ec4f537bf)
+        ;
+
+        
+    
+    
+            marker_3892df6e7e5444c6928fafc71c95676a.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5af41675c96b47009eb3e7f1dacafa57 = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_7554a933219e4679bb840b52a37c47c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_5af41675c96b47009eb3e7f1dacafa57.setIcon(icon_7554a933219e4679bb840b52a37c47c9);
+        
+    
+        var popup_cb3cefbb8b1349eeaa4722c6ce91c071 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_bf687fdd3e5049fb96c7b9aed4088c61 = $(`<div id="html_bf687fdd3e5049fb96c7b9aed4088c61" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_cb3cefbb8b1349eeaa4722c6ce91c071.setContent(html_bf687fdd3e5049fb96c7b9aed4088c61);
+        
+
+        marker_5af41675c96b47009eb3e7f1dacafa57.bindPopup(popup_cb3cefbb8b1349eeaa4722c6ce91c071)
+        ;
+
+        
+    
+    
+            marker_5af41675c96b47009eb3e7f1dacafa57.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0569b04b222b4009ab1effdcdaf052de = L.marker(
+                [46.190771, 5.2098],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_40b31189484848949738557161c9c755 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_0569b04b222b4009ab1effdcdaf052de.setIcon(icon_40b31189484848949738557161c9c755);
+        
+    
+        var popup_c10645f5b4fe48b78149a19729914af6 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_0136cb6074e4439eb1f55edbcdb7c06d = $(`<div id="html_0136cb6074e4439eb1f55edbcdb7c06d" style="width: 100.0%; height: 100.0%;">Dépendance</br> 51.0 chaudouet 1960.0 peronnas 01 289 <b>583000€</b></div>`)[0];
+            popup_c10645f5b4fe48b78149a19729914af6.setContent(html_0136cb6074e4439eb1f55edbcdb7c06d);
+        
+
+        marker_0569b04b222b4009ab1effdcdaf052de.bindPopup(popup_c10645f5b4fe48b78149a19729914af6)
+        ;
+
+        
+    
+    
+            marker_0569b04b222b4009ab1effdcdaf052de.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2c35f1b49c149aebd1e78319061bdf7 = L.marker(
+                [46.46236, 5.144019],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_e324912d01034828ab517640af21c264 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_d2c35f1b49c149aebd1e78319061bdf7.setIcon(icon_e324912d01034828ab517640af21c264);
+        
+    
+        var popup_dafd8048484c4dc08729cb98d73989d9 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_a67adacf9fdc468d854cd736019dc9a2 = $(`<div id="html_a67adacf9fdc468d854cd736019dc9a2" style="width: 100.0%; height: 100.0%;">nan</br> nan la grosse grange 1560.0 saint-nizier-le-bouchoux 01 380 <b>3240€</b></div>`)[0];
+            popup_dafd8048484c4dc08729cb98d73989d9.setContent(html_a67adacf9fdc468d854cd736019dc9a2);
+        
+
+        marker_d2c35f1b49c149aebd1e78319061bdf7.bindPopup(popup_dafd8048484c4dc08729cb98d73989d9)
+        ;
+
+        
+    
+    
+            marker_d2c35f1b49c149aebd1e78319061bdf7.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e0ac319162ea4363b92b87438222a3d6 = L.marker(
+                [46.46236, 5.144019],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_ebb8c2eb2c3e4e78966d2399e375d4f0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_e0ac319162ea4363b92b87438222a3d6.setIcon(icon_ebb8c2eb2c3e4e78966d2399e375d4f0);
+        
+    
+        var popup_19d8622cbf6543a68430f4f84fbc65d3 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_5dca2fb23c2b4d148689855d6c2a7304 = $(`<div id="html_5dca2fb23c2b4d148689855d6c2a7304" style="width: 100.0%; height: 100.0%;">nan</br> nan la grosse grange 1560.0 saint-nizier-le-bouchoux 01 380 <b>3240€</b></div>`)[0];
+            popup_19d8622cbf6543a68430f4f84fbc65d3.setContent(html_5dca2fb23c2b4d148689855d6c2a7304);
+        
+
+        marker_e0ac319162ea4363b92b87438222a3d6.bindPopup(popup_19d8622cbf6543a68430f4f84fbc65d3)
+        ;
+
+        
+    
+    
+            marker_e0ac319162ea4363b92b87438222a3d6.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_370c9ed63c2c4f17a446bd9bc2e281cb = L.marker(
+                [46.045976, 5.336238],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_263f4199563a44a4aea3486d472c1049 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_370c9ed63c2c4f17a446bd9bc2e281cb.setIcon(icon_263f4199563a44a4aea3486d472c1049);
+        
+    
+        var popup_510f4192ffa949728622c76f5b57b3d1 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_0ffd31f43689416c82fa287499216af9 = $(`<div id="html_0ffd31f43689416c82fa287499216af9" style="width: 100.0%; height: 100.0%;">Dépendance</br> 9.0 gabriel vicaire 1160.0 pont-d ain 01 304 <b>4000€</b></div>`)[0];
+            popup_510f4192ffa949728622c76f5b57b3d1.setContent(html_0ffd31f43689416c82fa287499216af9);
+        
+
+        marker_370c9ed63c2c4f17a446bd9bc2e281cb.bindPopup(popup_510f4192ffa949728622c76f5b57b3d1)
+        ;
+
+        
+    
+    
+            marker_370c9ed63c2c4f17a446bd9bc2e281cb.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_416c6e5c36fb4acf95be9e16b4d75e95 = L.marker(
+                [46.191717, 5.212459],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_1c37527fb05a47f9b9227af8e10c8506 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_416c6e5c36fb4acf95be9e16b4d75e95.setIcon(icon_1c37527fb05a47f9b9227af8e10c8506);
+        
+    
+        var popup_6283e14149fc45c0abe93f81437d963b = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_122e8299208e46f6a04f6e9b3fb56a11 = $(`<div id="html_122e8299208e46f6a04f6e9b3fb56a11" style="width: 100.0%; height: 100.0%;">Dépendance</br> 552.0 de lyon 1960.0 peronnas 01 289 <b>84000€</b></div>`)[0];
+            popup_6283e14149fc45c0abe93f81437d963b.setContent(html_122e8299208e46f6a04f6e9b3fb56a11);
+        
+
+        marker_416c6e5c36fb4acf95be9e16b4d75e95.bindPopup(popup_6283e14149fc45c0abe93f81437d963b)
+        ;
+
+        
+    
+    
+            marker_416c6e5c36fb4acf95be9e16b4d75e95.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bf2b0f34b9c84049bc50eec2462d3757 = L.marker(
+                [46.201525, 5.230611],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_350c24159f984df2af7f65e62ec3d3ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_bf2b0f34b9c84049bc50eec2462d3757.setIcon(icon_350c24159f984df2af7f65e62ec3d3ed);
+        
+    
+        var popup_ac9bb99dbc5341dfa8cf2ba3a2464142 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_483be2086a4341b3a1b16324beddb4c9 = $(`<div id="html_483be2086a4341b3a1b16324beddb4c9" style="width: 100.0%; height: 100.0%;">Dépendance</br> 7.0 charles guillon 1000.0 bourg-en-bresse 01 53 <b>95000€</b></div>`)[0];
+            popup_ac9bb99dbc5341dfa8cf2ba3a2464142.setContent(html_483be2086a4341b3a1b16324beddb4c9);
+        
+
+        marker_bf2b0f34b9c84049bc50eec2462d3757.bindPopup(popup_ac9bb99dbc5341dfa8cf2ba3a2464142)
+        ;
+
+        
+    
+    
+            marker_bf2b0f34b9c84049bc50eec2462d3757.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3f869d113fca42af869e82b0a0e61ee2 = L.marker(
+                [46.19349, 5.239127],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_cc49a8065f024db5b4e8fe44ee2ec77a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_3f869d113fca42af869e82b0a0e61ee2.setIcon(icon_cc49a8065f024db5b4e8fe44ee2ec77a);
+        
+    
+        var popup_915668dd71954d6dbffe72f08571347d = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_2c4610e632d74236a95ebebc7b9ba3eb = $(`<div id="html_2c4610e632d74236a95ebebc7b9ba3eb" style="width: 100.0%; height: 100.0%;">Dépendance</br> 6.0 de cuiron 1000.0 bourg-en-bresse 01 53 <b>82000€</b></div>`)[0];
+            popup_915668dd71954d6dbffe72f08571347d.setContent(html_2c4610e632d74236a95ebebc7b9ba3eb);
+        
+
+        marker_3f869d113fca42af869e82b0a0e61ee2.bindPopup(popup_915668dd71954d6dbffe72f08571347d)
+        ;
+
+        
+    
+    
+            marker_3f869d113fca42af869e82b0a0e61ee2.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3757055d9f494803b9cd8ba809aaf350 = L.marker(
+                [46.190317, 5.233941],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_64684047eecf4c529b2ab94adb2d9710 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_3757055d9f494803b9cd8ba809aaf350.setIcon(icon_64684047eecf4c529b2ab94adb2d9710);
+        
+    
+        var popup_857b4dca61eb452b99ad9b8be070a5b8 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_8a41a3fcb9bf4b0ebf6e807c87f84017 = $(`<div id="html_8a41a3fcb9bf4b0ebf6e807c87f84017" style="width: 100.0%; height: 100.0%;">Dépendance</br> 14.0 de l hippodrome 1000.0 bourg-en-bresse 01 53 <b>133000€</b></div>`)[0];
+            popup_857b4dca61eb452b99ad9b8be070a5b8.setContent(html_8a41a3fcb9bf4b0ebf6e807c87f84017);
+        
+
+        marker_3757055d9f494803b9cd8ba809aaf350.bindPopup(popup_857b4dca61eb452b99ad9b8be070a5b8)
+        ;
+
+        
+    
+    
+            marker_3757055d9f494803b9cd8ba809aaf350.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d119013c2b3848a286dfb73dd0cab4e2 = L.marker(
+                [46.208015, 5.221005],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_0c654d1967ae472f9652db1e4ba0402b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_d119013c2b3848a286dfb73dd0cab4e2.setIcon(icon_0c654d1967ae472f9652db1e4ba0402b);
+        
+    
+        var popup_7ae3617bd09047a0a9a5bc9ded1d7691 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_5464d1e3b5fc4b4fa2003fdd4d39edcd = $(`<div id="html_5464d1e3b5fc4b4fa2003fdd4d39edcd" style="width: 100.0%; height: 100.0%;">Dépendance</br> 49.0 de macon 1000.0 bourg-en-bresse 01 53 <b>9000€</b></div>`)[0];
+            popup_7ae3617bd09047a0a9a5bc9ded1d7691.setContent(html_5464d1e3b5fc4b4fa2003fdd4d39edcd);
+        
+
+        marker_d119013c2b3848a286dfb73dd0cab4e2.bindPopup(popup_7ae3617bd09047a0a9a5bc9ded1d7691)
+        ;
+
+        
+    
+    
+            marker_d119013c2b3848a286dfb73dd0cab4e2.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ae8b6045730640f2b16ee510780f734d = L.marker(
+                [46.049016, 5.33606],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_9addb552f69344b5af5f397ef5bbd1bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_ae8b6045730640f2b16ee510780f734d.setIcon(icon_9addb552f69344b5af5f397ef5bbd1bf);
+        
+    
+        var popup_4ad663e75a554fdab92d472910ff0314 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_c93d9662d59146339da0521dce5f3ecd = $(`<div id="html_c93d9662d59146339da0521dce5f3ecd" style="width: 100.0%; height: 100.0%;">Local industriel. commercial ou assimilé</br> 28.0 bernard gangloff 1160.0 pont-d ain 01 304 <b>62500€</b></div>`)[0];
+            popup_4ad663e75a554fdab92d472910ff0314.setContent(html_c93d9662d59146339da0521dce5f3ecd);
+        
+
+        marker_ae8b6045730640f2b16ee510780f734d.bindPopup(popup_4ad663e75a554fdab92d472910ff0314)
+        ;
+
+        
+    
+    
+            marker_ae8b6045730640f2b16ee510780f734d.bindTooltip(
+                `<div>
+                     Local industriel. commercial ou assimilé
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5143a99534b8407094e2b007939078b3 = L.marker(
+                [46.049016, 5.33606],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_85b78419b6174b429acf4d91bb7aa366 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_5143a99534b8407094e2b007939078b3.setIcon(icon_85b78419b6174b429acf4d91bb7aa366);
+        
+    
+        var popup_5054dd86f98e402b9668284fe8245d01 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_5497896dca4544d7857048b131b45739 = $(`<div id="html_5497896dca4544d7857048b131b45739" style="width: 100.0%; height: 100.0%;">Dépendance</br> 28.0 bernard gangloff 1160.0 pont-d ain 01 304 <b>62500€</b></div>`)[0];
+            popup_5054dd86f98e402b9668284fe8245d01.setContent(html_5497896dca4544d7857048b131b45739);
+        
+
+        marker_5143a99534b8407094e2b007939078b3.bindPopup(popup_5054dd86f98e402b9668284fe8245d01)
+        ;
+
+        
+    
+    
+            marker_5143a99534b8407094e2b007939078b3.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cd85b6d7dcfd49c39f1225fb5b352e2a = L.marker(
+                [46.189196, 5.245083],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_dd595b063bda41b99d64f6ef080537e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_cd85b6d7dcfd49c39f1225fb5b352e2a.setIcon(icon_dd595b063bda41b99d64f6ef080537e5);
+        
+    
+        var popup_7a3ed1b1f8644bc59776ae67e008010d = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_e25b193c3c9e4046957a4e0f8cf64bf8 = $(`<div id="html_e25b193c3c9e4046957a4e0f8cf64bf8" style="width: 100.0%; height: 100.0%;">Dépendance</br> 52.0 de monte cassino 1000.0 bourg-en-bresse 01 53 <b>102000€</b></div>`)[0];
+            popup_7a3ed1b1f8644bc59776ae67e008010d.setContent(html_e25b193c3c9e4046957a4e0f8cf64bf8);
+        
+
+        marker_cd85b6d7dcfd49c39f1225fb5b352e2a.bindPopup(popup_7a3ed1b1f8644bc59776ae67e008010d)
+        ;
+
+        
+    
+    
+            marker_cd85b6d7dcfd49c39f1225fb5b352e2a.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3637591252984be293b501f0b57e65b8 = L.marker(
+                [46.796754, 4.913775],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_6549ed156ea949c7876fcf6fd55ac34d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_3637591252984be293b501f0b57e65b8.setIcon(icon_6549ed156ea949c7876fcf6fd55ac34d);
+        
+    
+        var popup_8c7817f0cb1e4896bd726edfea289714 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_d681fd22a3814c2ba7cabd456318f96a = $(`<div id="html_d681fd22a3814c2ba7cabd456318f96a" style="width: 100.0%; height: 100.0%;">Dépendance</br> 6.0 de l est 1000.0 bourg-en-bresse 01 53 <b>108000€</b></div>`)[0];
+            popup_8c7817f0cb1e4896bd726edfea289714.setContent(html_d681fd22a3814c2ba7cabd456318f96a);
+        
+
+        marker_3637591252984be293b501f0b57e65b8.bindPopup(popup_8c7817f0cb1e4896bd726edfea289714)
+        ;
+
+        
+    
+    
+            marker_3637591252984be293b501f0b57e65b8.bindTooltip(
+                `<div>
+                     Dépendance
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_30aca6b7c3344270b008a4140df664b2 = L.marker(
+                [46.226165, 4.863804],
+                {}
+            ).addTo(feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10);
+        
+    
+            var icon_49a1e1c542a048ff81f2f9635aee6a8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_30aca6b7c3344270b008a4140df664b2.setIcon(icon_49a1e1c542a048ff81f2f9635aee6a8c);
+        
+    
+        var popup_39d555c0aea84e8fae5e2b6a0d4db014 = L.popup({"maxWidth": "400px", "minWidth": "200px"});
+
+        
+            var html_82e81d7eb46a426ab0497ef277c96b13 = $(`<div id="html_82e81d7eb46a426ab0497ef277c96b13" style="width: 100.0%; height: 100.0%;">nan</br> nan en lagnat 1290.0 cruzilles-les-mepillat 01 136 <b>135000€</b></div>`)[0];
+            popup_39d555c0aea84e8fae5e2b6a0d4db014.setContent(html_82e81d7eb46a426ab0497ef277c96b13);
+        
+
+        marker_30aca6b7c3344270b008a4140df664b2.bindPopup(popup_39d555c0aea84e8fae5e2b6a0d4db014)
+        ;
+
+        
+    
+    
+            marker_30aca6b7c3344270b008a4140df664b2.bindTooltip(
+                `<div>
+                     nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": true, "position": "topright", "title": "Expand me", "titleCancel": "Exit me"}
+            ).addTo(map_25f6c0a84bbd4e4e8b4168495358283b);
+        
+    
+            var layer_control_d5ebeb0ddd0948bf877e6cea0ec27d00 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_1f7954aeea1a402a8b1acaa57c790c72,
+                },
+                overlays :  {
+                    "houses" : feature_group_sub_group_128f8054f08d4083ab9a90ec8e530158,
+                    "appartements" : feature_group_sub_group_b9f4e51cd5b34eee89466767dbb49c15,
+                    "others" : feature_group_sub_group_9a52d99e2e0f4c5eb0006bfcecfcac10,
+                },
+            };
+            L.control.layers(
+                layer_control_d5ebeb0ddd0948bf877e6cea0ec27d00.base_layers,
+                layer_control_d5ebeb0ddd0948bf877e6cea0ec27d00.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_25f6c0a84bbd4e4e8b4168495358283b);
+        
+    
+            var measure_control_2e266e81e2074f33aa707e4191537afa = new L.Control.Measure(
+                {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "meters", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
+            map_25f6c0a84bbd4e4e8b4168495358283b.addControl(measure_control_2e266e81e2074f33aa707e4191537afa);
+
+        
+    
+            var tile_layer_9412201c861e4891ac6865f9fd330540 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_ae1090a18c834f08885a31b5c70f81fc = new L.Control.MiniMap(
+                tile_layer_9412201c861e4891ac6865f9fd330540,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": false, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_25f6c0a84bbd4e4e8b4168495358283b.addControl(mini_map_ae1090a18c834f08885a31b5c70f81fc);
+        
+</script>

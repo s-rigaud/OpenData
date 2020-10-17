@@ -277,7 +277,7 @@ if __name__ == "__main__":
     df["Valeur fonciere"] = df["Valeur fonciere"].str.replace(",", ".").astype(float)
     df["Code departement"] = df["Code departement"].map("{:0>2}".format)
 
-    sample_df = df.head(1000000).copy()
+    sample_df = df.head(100).copy()
 
     print("Loading addresses using cache ...")
     load_addresses_cache()
