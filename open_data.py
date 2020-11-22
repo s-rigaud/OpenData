@@ -6,7 +6,6 @@ import csv
 import json
 import os
 import pickle
-from typing import Iterable
 
 import folium
 import pandas as pd
@@ -18,15 +17,12 @@ addresses_base_url = "https://api-adresse.data.gouv.fr/search/?q="
 france_location = [48.52, 2.19]
 
 base_directory = os.path.dirname(os.path.abspath(__file__))
-if not os.path.exists(base_directory):
-    os.makedirs(base_directory)
 data_directory = os.path.join(base_directory, "data")
-if not os.path.exists(data_directory):
-    os.makedirs(data_directory)
-addresses_cache_file = os.path.join(data_directory, "addresses_cache_file.txt")
 map_directory = os.path.join(base_directory, "maps")
-if not os.path.exists(map_directory):
-    os.makedirs(map_directory)
+for directory in (base_directory, data_directory, map_directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+addresses_cache_file = os.path.join(data_directory, "addresses_cache_file.txt")
 
 
 def load_addresses_cache():
@@ -102,7 +98,7 @@ def get_coordinates(row: pd.core.series.Series) -> tuple:
 
 
 def create_distribution_heatmap(name: str, lats: list, lons: list):
-    """Create a folonium distribution heatmap
+    """Create a folonium distribution heatmap.
     It plots a point for every couple of latitude and longitude given
     """
     url_base = "http://server.arcgisonline.com/ArcGIS/rest/services/"
@@ -135,7 +131,7 @@ def create_distribution_heatmap(name: str, lats: list, lons: list):
 
 def create_markup_map(name: str, df: pd.core.frame.DataFrame):
     """Place a markup for each point with a valid
-    housing price evaluation
+    housing price evaluation and position
     """
     map_ = folium.Map(
         location=france_location,
@@ -227,11 +223,11 @@ def create_area_maps(df: pd.core.frame.DataFrame):
 
     areas = {
         "departement": {
-            "location":france_location,
+            "location": france_location,
             "zoom_start": 5,
         },
         "region": {
-            "location":     france_location,
+            "location": france_location,
             "zoom_start": 3,
         },
     }
@@ -265,8 +261,12 @@ def create_area_maps(df: pd.core.frame.DataFrame):
         m.add_child(folium.LayerControl())
         save_map(m, f"area_map_{area}.html")
 
-
-if __name__ == "__main__":
+def load_data_and_create_maps():
+    """First we load data from csv file. Next we call the external API
+    to retrieve the exact loaction. Finally we plot every point on the
+    three different type of maps.
+    (heatmap, point map & region/department map)
+    """
     print("Loading and cleaning CSV file ...")
     df = pd.read_csv(
         os.path.join(data_directory, "valeursfoncieres-2019.csv"),
@@ -277,7 +277,7 @@ if __name__ == "__main__":
     df["Valeur fonciere"] = df["Valeur fonciere"].str.replace(",", ".").astype(float)
     df["Code departement"] = df["Code departement"].map("{:0>2}".format)
 
-    sample_df = df.head(100).copy()
+    sample_df = df.head(10000).copy()
 
     print("Loading addresses using cache ...")
     load_addresses_cache()
@@ -307,4 +307,7 @@ if __name__ == "__main__":
     create_markup_map(name="markup_map.html", df=sample_df)
 
     # Heavy process
-    # create_area_maps(df)
+    create_area_maps(df)
+
+if __name__ == "__main__":
+    load_data_and_create_maps()
