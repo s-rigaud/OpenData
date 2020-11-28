@@ -1,6 +1,6 @@
 
 ## To watch the maps
-Go to the map folder and choose the one you are searching for. [overview](#overview)
+Go to the map folder and choose the one you are searching for. [→ Overview](#overview)
 
 ## To lauch and manipulate the project
 
@@ -51,6 +51,8 @@ To avoid calling the external API to often we created a pickled address cache fi
 ### Valeurs foncières
 
 [Licence Ouverte / Open Licence version 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence)
+
+https://www.data.gouv.fr/fr/datasets/5cc1b94a634f4165e96436c1/
 
 Download from https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/
 

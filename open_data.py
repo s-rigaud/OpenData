@@ -79,6 +79,7 @@ def get_coordinates(row: pd.core.series.Series) -> tuple:
     We are using a pickled file base cache to avoid spamming the API
     """
     address = get_address_from_row(row)
+    print(address)
 
     if not addresses_cache.get(address):
         response = requests.get(addresses_base_url + address)
@@ -269,7 +270,7 @@ def load_data_and_create_maps():
     """
     print("Loading and cleaning CSV file ...")
     df = pd.read_csv(
-        os.path.join(data_directory, "valeursfoncieres-2019.csv"),
+        os.path.join(data_directory, "valeursfoncieres-2019.txt"),
         delimiter="|",
         encoding="utf-8",
     )
@@ -277,17 +278,25 @@ def load_data_and_create_maps():
     df["Valeur fonciere"] = df["Valeur fonciere"].str.replace(",", ".").astype(float)
     df["Code departement"] = df["Code departement"].map("{:0>2}".format)
 
-    sample_df = df.head(10000).copy()
+    # sample_df = df.head(600000).copy()
+    sample_df = df.iloc[400000:600000].copy()
 
     print("Loading addresses using cache ...")
     load_addresses_cache()
     lons = []
     lats = []
     for _, row in sample_df.iterrows():
-        print(_)
-        lon, lat = get_coordinates(row)
+        try:
+            lon, lat = get_coordinates(row)
+        except Exception as exc:
+            lon, lat = 0, 0
+            print(exc)
         lons.append(lon)
         lats.append(lat)
+        if (_ % 100 == 0):
+            print(_)
+            print("Saving addresses")
+            save_addresses_cache()
 
     sample_df["lon"] = lons
     sample_df["lat"] = lats
@@ -307,7 +316,7 @@ def load_data_and_create_maps():
     create_markup_map(name="markup_map.html", df=sample_df)
 
     # Heavy process
-    create_area_maps(df)
+    # create_area_maps(df)
 
 if __name__ == "__main__":
     load_data_and_create_maps()
