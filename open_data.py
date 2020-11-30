@@ -270,7 +270,7 @@ def load_data_and_create_maps():
     """
     print("Loading and cleaning CSV file ...")
     df = pd.read_csv(
-        os.path.join(data_directory, "valeursfoncieres-2019.txt"),
+        os.path.join(data_directory, "valeurs_foncieres.txt"),
         delimiter="|",
         encoding="utf-8",
     )
@@ -316,7 +316,7 @@ def load_data_and_create_maps():
     create_markup_map(name="markup_map.html", df=sample_df)
 
     # Heavy process
-    # create_area_maps(df)
+    create_area_maps(sample_df)
 
 if __name__ == "__main__":
     load_data_and_create_maps()

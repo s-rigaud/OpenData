@@ -6,6 +6,8 @@ Go to the map folder and choose the one you are searching for. [→ Overview](#o
 
 Download the latest file from the [French government website](https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres) and move it in the data folder.
 
+Then rename it to valeurs_foncieres.txt
+
 Ensure you have python 3 or more running on your computer.
 
 Next open a terminal and type:
