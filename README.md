@@ -36,6 +36,9 @@ To avoid calling the external API to often we created a pickled address cache fi
 
 ## Overview <a name="overview"></a>
 
+###### Original model
+![Original model](https://github.com/s-rigaud/OpenData/raw/master/overview/maquette.png)
+
 ###### Heat Map
 ![Heat map](https://github.com/s-rigaud/OpenData/raw/master/overview/heatmap.png)
 
