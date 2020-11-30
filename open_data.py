@@ -8,6 +8,7 @@ import os
 import pickle
 
 import folium
+import ipdb
 import pandas as pd
 import requests
 from folium import plugins
@@ -22,28 +23,6 @@ map_directory = os.path.join(base_directory, "maps")
 for directory in (base_directory, data_directory, map_directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
-addresses_cache_file = os.path.join(data_directory, "addresses_cache_file.txt")
-
-
-def load_addresses_cache():
-    """Load already saved addresses and GPS positions
-    saved in a picled file
-    """
-    if not os.path.exists(addresses_cache_file):
-        with open(addresses_cache_file, "wb") as f:
-            pickle.dump(addresses_cache, f)
-
-    with open(addresses_cache_file, "rb") as f:
-        addresses_cache.update(pickle.load(f))
-        print(f"Already {len(addresses_cache)} addresses in cache")
-        return addresses_cache
-
-
-def save_addresses_cache():
-    """Save the address cache file"""
-    with open(addresses_cache_file, "wb") as f:
-        pickle.dump(addresses_cache, f)
-
 
 def save_map(folium_map: folium.Map, filename: str):
     """Save maps in the dedicated "maps" folder"""
@@ -58,44 +37,15 @@ def get_address_from_row(row: pd.core.series.Series) -> str:
     return (
         " ".join(
             (
-                str(row["No voie"]),
-                str(row["Voie"]),
-                str(row["Code postal"]),
-                str(row["Commune"]),
-                str(row["Code departement"]),
-                str(row["Code commune"]),
+                str(row["adresse_code_voie"]),
+                str(row["adresse_nom_voie"]),
+                str(row["code_postal"]),
+                str(row["nom_commune"]),
             )
         )
         .strip()
         .lower()
     )
-
-
-def get_coordinates(row: pd.core.series.Series) -> tuple:
-    """For given french addresses formatted parameters, we
-    call the government API to retrieve the GPS position of the
-    location
-
-    We are using a pickled file base cache to avoid spamming the API
-    """
-    address = get_address_from_row(row)
-    print(address)
-
-    if not addresses_cache.get(address):
-        response = requests.get(addresses_base_url + address)
-        addresses = json.loads(response.text)
-
-        features = addresses["features"]
-        if features:
-            res = (
-                features[0]["geometry"]["coordinates"][0],
-                features[0]["geometry"]["coordinates"][1],
-            )
-        else:
-            res = (0, 0)
-        addresses_cache[address] = res
-
-    return addresses_cache[address]
 
 
 def create_distribution_heatmap(name: str, lats: list, lons: list):
@@ -151,7 +101,7 @@ def create_markup_map(name: str, df: pd.core.frame.DataFrame):
     map_.add_child(others)
 
     for _, row in df.iterrows():
-        housing_type = row["Type local"]
+        housing_type = row["type_local"]
         if housing_type == "Maison":
             color = "darkgreen"
             icon = "home"
@@ -166,11 +116,11 @@ def create_markup_map(name: str, df: pd.core.frame.DataFrame):
             icon = "info-sign"
             context = others
 
-        price = int(row["Valeur fonciere"])
+        price = int(row["valeur_fonciere"])
         address = get_address_from_row(row)
         context.add_child(
             folium.Marker(
-                (row["lat"], row["lon"]),
+                (row["latitude"], row["longitude"]),
                 popup=folium.Popup(
                     f"{housing_type}</br> {address} <b>{price}€</b>",
                     # Not working properly
@@ -211,9 +161,12 @@ def add_region_code(df: pd.core.frame.DataFrame):
     print("Assigning region code for each row")
     region_code = []
     for _, row in df.iterrows():
-        region_code.append(mapping[row["Code departement"]])
+        try:
+            region_code.append(mapping[row["code_departement"]])
+        except:
+            import ipdb; ipdb.set_trace()
 
-    df["Code region"] = region_code
+    df["code_region"] = region_code
 
 
 def create_area_maps(df: pd.core.frame.DataFrame):
@@ -234,11 +187,11 @@ def create_area_maps(df: pd.core.frame.DataFrame):
     }
 
     for area, scale in areas.items():
-        dep_value = df[[f"Code {area}", "Valeur fonciere", "Type local"]].rename(
-            columns={f"Code {area}": "id", "Valeur fonciere": "€(Median)"}
+        dep_value = df[[f"code_{area}", "valeur_fonciere", "type_local"]].rename(
+            columns={f"code_{area}": "id", "valeur_fonciere": "€(Median)"}
         )
         median_dep_value_houses = (
-            dep_value[dep_value["Type local"] == "Maison"]
+            dep_value[dep_value["type_local"] == "Maison"]
             .groupby(["id"])
             .median()
             .astype(int)
@@ -263,60 +216,35 @@ def create_area_maps(df: pd.core.frame.DataFrame):
         save_map(m, f"area_map_{area}.html")
 
 def load_data_and_create_maps():
-    """First we load data from csv file. Next we call the external API
-    to retrieve the exact loaction. Finally we plot every point on the
-    three different type of maps.
-    (heatmap, point map & region/department map)
+    """First we load data from csv file. Next we filter lines without
+    interesting data. Finally we plot every point on the three
+    different type of maps. (heatmap, point map & region/department map)
     """
     print("Loading and cleaning CSV file ...")
     df = pd.read_csv(
-        os.path.join(data_directory, "valeursfoncieres-2019.txt"),
-        delimiter="|",
+        os.path.join(data_directory, "etalab_dvf_2019.csv"),
+        delimiter=",",
         encoding="utf-8",
     )
-    # Cleaning df
-    df["Valeur fonciere"] = df["Valeur fonciere"].str.replace(",", ".").astype(float)
-    df["Code departement"] = df["Code departement"].map("{:0>2}".format)
 
-    # sample_df = df.head(600000).copy()
-    sample_df = df.iloc[400000:600000].copy()
-
-    print("Loading addresses using cache ...")
-    load_addresses_cache()
-    lons = []
-    lats = []
-    for _, row in sample_df.iterrows():
-        try:
-            lon, lat = get_coordinates(row)
-        except Exception as exc:
-            lon, lat = 0, 0
-            print(exc)
-        lons.append(lon)
-        lats.append(lat)
-        if (_ % 100 == 0):
-            print(_)
-            print("Saving addresses")
-            save_addresses_cache()
-
-    sample_df["lon"] = lons
-    sample_df["lat"] = lats
     # Filter points without positions -> NaN or 0
-    sample_df = sample_df[
-        (pd.notnull(sample_df["lon"]) & sample_df["lon"] != 0)
-        & (pd.notnull(sample_df["lat"]) & sample_df["lat"] != 0)
-        & (sample_df["Valeur fonciere"] > 0)
+    df = df[
+        pd.notnull(df["longitude"])
+        & pd.notnull(df["latitude"])
+        & (df["valeur_fonciere"] > 0)
     ]
+    df["code_departement"] = df["code_departement"].map("{:0>2}".format)
 
-    save_addresses_cache()
+    sample_df = df.sample(n=5000).copy()
 
     print("Creating maps ...")
-    create_distribution_heatmap(
-        name="distribution_heatmap.html", lats=sample_df["lat"], lons=sample_df["lon"]
-    )
+    """create_distribution_heatmap(
+        name="distribution_heatmap.html", lats=sample_df["latitude"], lons=sample_df["longitude"]
+    )"""
     create_markup_map(name="markup_map.html", df=sample_df)
 
     # Heavy process
-    # create_area_maps(df)
+    # create_area_maps(df=sample_df)
 
 if __name__ == "__main__":
     load_data_and_create_maps()
